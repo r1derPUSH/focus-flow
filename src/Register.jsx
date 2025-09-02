@@ -13,13 +13,15 @@ const Register = () => {
           </span>
         </div>
         <div className="avatar">
-          <img src={avatar} alt="" />
+          <div className="flex-img">
+            <img className="avatar-login" src={avatar} alt="" />
+          </div>
           <div className="change-image-handler"></div>
         </div>
         <div className="login-input-fields">
           <div className="name">
-            <label for="name">Name</label>
             <input
+              className="name-input-login"
               placeholder="Name"
               type="text"
               id="name"
@@ -28,8 +30,8 @@ const Register = () => {
             ></input>
           </div>
           <div className="surname-label">
-            <label for="surname">Surname</label>
             <input
+              className="surname-input-login"
               placeholder="Surname"
               type="text"
               id="surname"
