@@ -1,5 +1,6 @@
 import React from "react";
 import avatar from "./assets/man-avatar.jpg";
+import changeIcon from "./assets/icons8-change-50.png";
 
 const Register = () => {
   return (
@@ -15,6 +16,7 @@ const Register = () => {
         <div className="avatar">
           <div className="flex-img">
             <img className="avatar-login" src={avatar} alt="" />
+            <img className="avatar-change-logo" src={changeIcon} alt="" />
           </div>
           <div className="change-image-handler"></div>
         </div>
