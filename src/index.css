@@ -90,6 +90,7 @@ body {
   width: 3vh;
   height: 3vh;
   margin-top: 6vh;
+  cursor: pointer;
 }
 
 /* inputs */

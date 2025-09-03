@@ -1,8 +1,20 @@
 import React from "react";
 import avatar from "./assets/man-avatar.jpg";
 import changeIcon from "./assets/icons8-change-50.png";
+import { useState } from "react";
 
 const Register = () => {
+  const [img, setImg] = useState(avatar);
+
+  const handleImgChange = () => {
+    // if (img == avatar) {
+    //   setImg(avatar2);
+    // }
+    // if (img == avatar2) {
+    //   setImg(avatar);
+    // }
+  };
+
   return (
     <section className="login-section">
       <div className="flexBox">
@@ -15,8 +27,13 @@ const Register = () => {
         </div>
         <div className="avatar">
           <div className="flex-img">
-            <img className="avatar-login" src={avatar} alt="" />
-            <img className="avatar-change-logo" src={changeIcon} alt="" />
+            <img className="avatar-login" src={img} alt="" />
+            <img
+              onClick={handleImgChange}
+              className="avatar-change-logo"
+              src={changeIcon}
+              alt=""
+            />
           </div>
           <div className="change-image-handler"></div>
         </div>
