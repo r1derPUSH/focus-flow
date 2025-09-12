@@ -158,13 +158,13 @@ body {
 
 @media (max-width: 480px) {
   .avatar-login {
-    width: 20vh;
-    height: 20vh;
+    width: 30vw;
+    height: 30vw;
   }
   
   .avatar-change-logo {
-    width: 8vh;
-    height: 8vh;
+    width: 12vw;
+    height: 12vw;
     margin-top: 8vh;
   }
 }
