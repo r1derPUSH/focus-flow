@@ -7,6 +7,11 @@ import MainContent from "./MainContent";
 import { useEffect } from "react";
 
 const Register = () => {
+
+  function wait (ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  const [styles, setStyles] = useState(false);
   const [img, setImg] = useState(avatar);
   const [isStarted, setIsStarted] = useState(false);
   const handleImgChange = () => {
@@ -18,14 +23,16 @@ const Register = () => {
     }
   };
 
-  const handleStart = () => {
+   async function handleStart () {
+    setStyles(true);
+    await wait(1500);
     setIsStarted(true);
   };
 
   if (!isStarted) {
     console.log("worked out if");
     return (
-      <section className="login-section">
+      <section className={!styles ? "login-section" : "login-section-activated"}>
         <div className="flexBox">
           <div className="login-text">
             <h1>Fill your profile</h1>
