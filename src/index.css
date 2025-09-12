@@ -193,3 +193,27 @@ body {
     margin-top: 8vh;
   }
 }
+
+/* HEADER */
+
+.logotype {
+  width: 20vh;
+  height: 20vh;
+}
+
+.flex-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo-text {
+  font-size: 20vh;
+}

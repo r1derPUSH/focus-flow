@@ -8,9 +8,15 @@ import { useEffect } from "react";
 
 const Register = () => {
 
+  useEffect(() => {
+    document.body.style.backgroundColor = '#1e1e1e';
+  }, [])
+
   function wait (ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  const [nameValue, setNameValue] = useState("");
+  const [surnameValue, setSurnameValue] = useState("");
   const [styles, setStyles] = useState(false);
   const [img, setImg] = useState(avatar);
   const [isStarted, setIsStarted] = useState(false);
@@ -22,6 +28,14 @@ const Register = () => {
       setImg(avatar);
     }
   };
+
+  function handleChangeName (e) {
+    setNameValue(e.target.value);
+  }
+
+  function handleChangeSurname (e) {
+    setSurnameValue(e.target.value);
+  }
 
    async function handleStart () {
     setStyles(true);
@@ -61,6 +75,8 @@ const Register = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={nameValue}
+                onChange={handleChangeName}
                 required
               ></input>
             </div>
@@ -71,6 +87,8 @@ const Register = () => {
                 type="text"
                 id="surname"
                 name="surname"
+                value={surnameValue}
+                onChange={handleChangeSurname}
                 required
               ></input>
             </div>
