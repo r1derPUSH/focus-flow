@@ -7,6 +7,9 @@ function Header() {
             <img src="./src/assets/logo.png" alt="" className="logotype" />
             <h1 className="logo-text">Focus Flow</h1>
           </div>
+          <div>
+            <img src="./src/assets/notification.png" alt="" className="notification" />
+          </div>
         </div>
       </div>
     </header>

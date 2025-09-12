@@ -196,10 +196,27 @@ body {
 
 /* HEADER */
 
-.logotype {
+.logotype,
+.notification {
   width: clamp(8vw, 12vw, 15vw);
-  height: auto;
-  
+  height: auto; 
+}
+
+.notification {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.notification:active {
+  animation: pulse 0.2s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.2) rotate(-10deg); }
+  50% { transform: scale(1.2) rotate(10deg); }
+  75% { transform: scale(1.1) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0); }
 }
 
 .flex-logo {
