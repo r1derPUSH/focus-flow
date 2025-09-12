@@ -1,14 +1,17 @@
+import logo from './assets/logo.png';
+import notification from './assets/notification.png';
+
 function Header() {
   return (
     <header>
       <div>
         <div className="flex-header">
           <div className="flex-logo">
-            <img src="./src/assets/logo.png" alt="" className="logotype" />
+            <img src={logo} alt="" className="logotype" />
             <h1 className="logo-text">Focus Flow</h1>
           </div>
           <div>
-            <img src="./src/assets/notification.png" alt="" className="notification" />
+            <img src={notification} alt="" className="notification" />
           </div>
         </div>
       </div>
