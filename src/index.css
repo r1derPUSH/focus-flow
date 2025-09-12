@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #ffffff;
   background-color: #121212; /* темний фон */
 }
@@ -18,7 +18,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: #121212; /* темно-сірий, майже чорний */
   color: #ffffff;
 }
@@ -196,6 +196,10 @@ body {
 
 /* HEADER */
 
+.header-tag {
+  background-color: #121212;
+}
+
 .logotype,
 .notification {
   width: clamp(8vw, 12vw, 15vw);
@@ -236,4 +240,20 @@ body {
   font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: 600;
   font-family: 'Quicksand', sans-serif;
+}
+
+/* greeting component */
+
+.greeting-text,
+.greeting-clock {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  margin-top: 3vh;
+}
+
+.greeting-div {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

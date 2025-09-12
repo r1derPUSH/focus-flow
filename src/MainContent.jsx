@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "./Header";
 
-const MainContent = () => {
+const MainContent = ({ name, surname }) => {
 
   
 
   return (
     <section className="body-section">
-      <Header />
+      <Header name={name} surname={surname} />
     </section>
   );
 };

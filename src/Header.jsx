@@ -1,9 +1,13 @@
 import logo from './assets/logo.png';
 import notification from './assets/notification.png';
+import Greeting from './Greeting';
 
-function Header() {
+function Header( { name, surname } ) {
+  
+
   return (
-    <header>
+    <>
+    <header className='header-tag'>
       <div>
         <div className="flex-header">
           <div className="flex-logo">
@@ -16,6 +20,8 @@ function Header() {
         </div>
       </div>
     </header>
+    <Greeting name={name} surname={surname}/>
+    </>
   );
 }
 

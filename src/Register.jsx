@@ -104,7 +104,7 @@ const Register = () => {
     );
   } else if (isStarted) {
     console.log("wordked out else if");
-    return <MainContent />;
+    return <MainContent name={nameValue} surname={surnameValue} />;
   }
 };
 
