@@ -254,6 +254,7 @@ body {
 
 .greeting-text,
 .greeting-clock {
+  font-size: 1.1rem;
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   margin-top: 3vh;
@@ -266,7 +267,7 @@ body {
 }
 
 .greeting-div {
-  width: 60%;
+  width: 75%;
   background-color: #1f1f1f;
   display: flex;
   justify-content: space-between;
@@ -284,7 +285,7 @@ body {
   padding: 2%;
   border-radius: 12px;
   margin: 2% auto;
-  width: 60%;
+  width: 75%;
   height: auto;
   min-height: 20vh;
 }
@@ -294,8 +295,28 @@ body {
 .clock {
   margin-top: 3vh;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: "Quicksand", sans-serif;
   font-weight: center;
   text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.75);
+}
+
+/* Daily Tasks */
+
+.tasks-flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks-div {
+  margin-top: 3vh;
+  width: 75%;
+  display: flex;
+  justify-content: start;
+}
+
+.tasks-div span {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
 }

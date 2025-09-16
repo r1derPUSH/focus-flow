@@ -1,3 +1,4 @@
+import DailyTasks from "./DailyTasks";
 import Greeting from "./Greeting";
 import ProgressBar from "./ProgressBar";
 
@@ -6,6 +7,7 @@ function MainSection({ name, surname }) {
     <>
       <Greeting name={name} surname={surname} />
       <ProgressBar />
+      <DailyTasks />
     </>
   );
 }
