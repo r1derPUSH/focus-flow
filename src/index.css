@@ -387,3 +387,10 @@ body {
 .task-checkbox:hover {
   transform: scale(1.1);
 }
+
+/* UserDescOfTask */
+
+.user-description-of-task-container {
+  display: flex;
+  justify-content: space-around;
+}
