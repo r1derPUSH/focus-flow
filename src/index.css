@@ -329,8 +329,15 @@ body {
   align-self: center;
 }
 
+.add-task-btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .add-task-btn {
-  padding: 10px 20px;
+  height: 5vh;
+  padding: 1vh 2vh;
   border: none;
   border-radius: 8px;
   background: linear-gradient(135deg, #4cafef, #0077ff);
@@ -391,6 +398,61 @@ body {
 /* UserDescOfTask */
 
 .user-description-of-task-container {
+  margin: 15px;
   display: flex;
   justify-content: space-around;
+  width: 100%;
+}
+
+.user-description-of-task-container input {
+  height: 5h;
+}
+
+.task-user-description {
+  width: 70%;
+  height: 10vh;
+  border-radius: 25px;
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.input-uDesc {
+  width: 10vw;
+  background-color: #2a2a2a; /* під колір діву */
+  border: 1px solid #444; /* легка рамка для відділення */
+  border-radius: 8px;
+  padding: 1vh 1.4vh;
+  color: #ffffff; /* білий текст */
+  font-size: 1.2rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  width: 20vw; /* щоб тягнувся */
+  box-sizing: border-box;
+}
+
+.input-uDesc::placeholder {
+  opacity: 0.5;
+  color: #aaaaaa; /* сірий плейсхолдер */
+}
+
+.input-uDesc:focus {
+  border: 1px solid #6c63ff; /* акцент при фокусі */
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+  .tasks-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tasks-div > div {
+    margin-top: 3vh;
+  }
+
+  .tasks-div > button {
+    margin-top: 3vh;
+  }
 }

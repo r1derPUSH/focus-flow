@@ -13,12 +13,18 @@ function DailyTasks() {
       <div className="tasks-flex-div">
         <div className="tasks-div">
           <span className="span-daily-tasks-text">Daily Tasks: </span>
-          <div className="task-user-description">
-            {isUserDescriptionVisible ? <UserDescriptionOfTask /> : ""}
+          {isUserDescriptionVisible ? (
+            <div className="task-user-description">
+              <UserDescriptionOfTask />
+            </div>
+          ) : (
+            ""
+          )}
+          <div className="add-task-btn-div">
+            <button onClick={handleAddTask} className="add-task-btn">
+              Add New Task
+            </button>
           </div>
-          <button onClick={handleAddTask} className="add-task-btn">
-            Add New Task
-          </button>
         </div>
         <div>
           {/* <span>Tasks:</span> */}

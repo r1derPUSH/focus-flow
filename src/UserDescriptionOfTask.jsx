@@ -6,8 +6,8 @@ function UserDescriptionOfTask() {
   const [difficulty, setDifficulty] = useState("");
   return (
     <div className="user-description-of-task-container">
-      <input type="text" />
-      <input type="text" />
+      <input className="input-uDesc" type="text" placeholder="Task" />
+      <input className="input-uDesc" type="text" placeholder="Description" />
       <div className="dropbox-bar">
         <span>easy</span>
       </div>
