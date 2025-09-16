@@ -10,6 +10,7 @@ const MainContent = ({ name, surname }) => {
     <section className="body-section">
       <Header name={name} surname={surname} />
       <ProgressBar />
+      
     </section>
   );
 };
