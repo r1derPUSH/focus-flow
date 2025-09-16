@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #ffffff;
   background-color: #121212; /* темний фон */
 }
@@ -18,7 +18,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background-color: #121212; /* темно-сірий, майже чорний */
   color: #ffffff;
 }
@@ -45,7 +45,6 @@ body {
     transform: translateX(-100vw) rotate(360deg);
   }
 }
-
 
 .login-text {
   text-align: center;
@@ -178,7 +177,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-
 /* media parameters */
 
 @media (max-width: 480px) {
@@ -186,7 +184,7 @@ body {
     width: 30vw;
     height: 30vw;
   }
-  
+
   .avatar-change-logo {
     width: 12vw;
     height: 12vw;
@@ -203,7 +201,7 @@ body {
 .logotype,
 .notification {
   width: clamp(8vw, 12vw, 15vw);
-  height: auto; 
+  height: auto;
 }
 
 .notification {
@@ -216,11 +214,21 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1) rotate(0); }
-  25% { transform: scale(1.2) rotate(-10deg); }
-  50% { transform: scale(1.2) rotate(10deg); }
-  75% { transform: scale(1.1) rotate(-5deg); }
-  100% { transform: scale(1) rotate(0); }
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
 }
 
 .flex-logo {
@@ -239,14 +247,14 @@ body {
 .logo-text {
   font-size: clamp(1rem, 4vw, 2.5rem);
   font-weight: 600;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 /* greeting component */
 
 .greeting-text,
 .greeting-clock {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   margin-top: 3vh;
 }
@@ -264,8 +272,8 @@ body {
   /* background-color: #121212; */
 }
 
-.progress-bar { 
-  background-color: #1a1a1a; 
+.progress-bar {
+  background-color: #1a1a1a;
   padding: 2%;
   border-radius: 12px;
   margin: 2% auto;
@@ -274,3 +282,17 @@ body {
   min-height: 20vh;
 }
 
+/* digital clock */
+
+.clock-container {
+  backdrop-filter: blur(5px);
+  width: 100vw;
+}
+
+.clock {
+  color: white;
+  font-size: 6rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: center;
+  text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.75);
+}
