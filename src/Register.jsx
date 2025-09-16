@@ -7,13 +7,12 @@ import MainContent from "./MainContent";
 import { useEffect } from "react";
 
 const Register = () => {
-
   useEffect(() => {
-    document.body.style.backgroundColor = '#1e1e1e';
-  }, [])
+    document.body.style.backgroundColor = "#1e1e1e";
+  }, []);
 
-  function wait (ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
   const [nameValue, setNameValue] = useState("");
   const [surnameValue, setSurnameValue] = useState("");
@@ -29,24 +28,28 @@ const Register = () => {
     }
   };
 
-  function handleChangeName (e) {
+  function handleChangeName(e) {
     setNameValue(e.target.value);
   }
 
-  function handleChangeSurname (e) {
+  function handleChangeSurname(e) {
     setSurnameValue(e.target.value);
   }
 
-   async function handleStart () {
+  async function handleStart() {
+    localStorage.setItem("name", nameValue);
+    localStorage.setItem("surname", surnameValue);
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
-  };
+  }
 
   if (!isStarted) {
     console.log("worked out if");
     return (
-      <section className={!styles ? "login-section" : "login-section-activated"}>
+      <section
+        className={!styles ? "login-section" : "login-section-activated"}
+      >
         <div className="flexBox">
           <div className="login-text">
             <h1>Fill your profile</h1>

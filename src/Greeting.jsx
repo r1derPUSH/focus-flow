@@ -35,7 +35,7 @@ const Greeting = ({ name, surname }) => {
     <div className="flex-bar">
       <div className="greeting-div">
         <span className="greeting-text">
-          {timeOfDay}, {name}
+          Good {timeOfDay}, {name} 👋
         </span>
         <DigitalClock />
       </div>

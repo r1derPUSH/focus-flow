@@ -258,6 +258,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   margin-top: 3vh;
+  letter-spacing: 0.2vw;
 }
 
 .flex-bar {
@@ -305,6 +306,7 @@ body {
 
 .tasks-flex-div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -313,10 +315,75 @@ body {
   margin-top: 3vh;
   width: 75%;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
 }
 
 .tasks-div span {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
+}
+
+.span-daily-tasks-text {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.add-task-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4cafef, #0077ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.add-task-btn:hover {
+  background: linear-gradient(135deg, #5ec6ff, #3399ff);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.tasks-container {
+  width: 75%;
+  margin: 3vh auto;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  /* padding: 16px; */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a2a2a;
+  /* padding: 10px 14px; */
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.task-item:hover {
+  background-color: #333333;
+  /* transform: translateY(-2px); */
+}
+
+.task-title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.task-checkbox {
+  accent-color: #3b82f6;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-checkbox:hover {
+  transform: scale(1.1);
 }
