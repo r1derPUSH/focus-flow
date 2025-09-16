@@ -9,13 +9,13 @@ const Greeting = ({ name, surname }) => {
   }, []);
 
   return (
-    <div className="greeting-div">
-      <span className="greeting-text">
-        Good {timeOfDay}, {name}
-      </span>
-      <span>
+    <div className="flex-bar">
+      <div className="greeting-div">
+        <span className="greeting-text">
+          Good {timeOfDay}, {name}
+        </span>
         <DigitalClock />
-      </span>
+      </div>
     </div>
   );
 };
