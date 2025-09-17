@@ -9,7 +9,7 @@ function UserDescriptionOfTask() {
       <input className="input-uDesc" type="text" placeholder="Task" />
       <input className="input-uDesc" type="text" placeholder="Description" />
       <div className="dropbox-bar">
-        <span>easy</span>
+        <button className="create-task-button">Create</button>
       </div>
     </div>
   );

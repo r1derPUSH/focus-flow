@@ -345,6 +345,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
+  margin-left: 2vw;
 }
 
 .add-task-btn:hover {
@@ -419,7 +420,7 @@ body {
 }
 
 .input-uDesc {
-  width: 10vw;
+  /* width: 10vw; */
   background-color: #2a2a2a; /* під колір діву */
   border: 1px solid #444; /* легка рамка для відділення */
   border-radius: 8px;
@@ -428,7 +429,7 @@ body {
   font-size: 1.2rem;
   outline: none;
   transition: border 0.2s ease, box-shadow 0.2s ease;
-  width: 20vw; /* щоб тягнувся */
+  width: 17vw; /* щоб тягнувся */
   box-sizing: border-box;
 }
 
@@ -442,7 +443,35 @@ body {
   box-shadow: 0 0 6px rgba(108, 99, 255, 0.5);
 }
 
-@media (max-width: 600px) {
+.dropbox-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-task-button {
+  width: auto;
+  border-radius: 25px;
+  height: auto;
+  background-color: hsl(0, 0%, 26%); /* під колір діву */
+  border: 1px solid #444;
+  /* border-radius: 8px; */
+  padding: 2vh 2vw;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.create-task-button:hover {
+  background-color: #3a3a3a; /* трохи світліший відтінок */
+}
+
+.create-task-button:active {
+  transform: scale(0.97); /* ефект натискання */
+}
+
+@media (max-width: 800px) {
   .tasks-div {
     display: flex;
     flex-direction: column;
