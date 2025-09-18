@@ -2,14 +2,19 @@ import { useState } from "react";
 
 function UserDescriptionOfTask() {
   const [taskValue, setTaskValue] = useState("");
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState([]);
   const [descValue, setDescValue] = useState("");
   const [desc, setDesc] = useState("");
   // const [difficulty, setDifficulty] = useState("");
 
   const handleCreate = () => {
-    setTask(taskValue);
-    setDesc(descValue);
+    const tasks = [...task, taskValue];
+    const 
+    // setDesc(...desc, descValue);
+    setTask(items);
+    localStorage.setItem("task-name", JSON.stringify(tasks));
+    localStorage.setItem("task-name", JSON.stringify(items));
+    setTaskValue("");
   };
 
   const handleChangeTask = (e) => {
