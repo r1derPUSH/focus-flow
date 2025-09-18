@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UserDescriptionOfTask() {
+function UserDescriptionOfTask({ isVisible, setIsVisible }) {
   const [taskValue, setTaskValue] = useState("");
   const [task, setTask] = useState([]);
   const [descValue, setDescValue] = useState("");
@@ -9,12 +9,28 @@ function UserDescriptionOfTask() {
 
   const handleCreate = () => {
     const tasks = [...task, taskValue];
+    const descs = [...desc, descValue];
     // const
     // setDesc(...desc, descValue);
-    setTask(items);
-    localStorage.setItem("task-name", JSON.stringify(tasks));
-    localStorage.setItem("task-name", JSON.stringify(items));
+    setTask(tasks);
+    setDesc(descs);
+    localStorage.setItem(
+      "task-name",
+      JSON.stringify([
+        ...(JSON.parse(localStorage.getItem("task-name")) || []),
+        tasks,
+      ])
+    );
+    localStorage.setItem(
+      "task-description",
+      JSON.stringify([
+        ...(JSON.parse(localStorage.getItem("task-description")) || []),
+        descs,
+      ])
+    );
     setTaskValue("");
+    setDescValue("");
+    setIsVisible(false);
   };
 
   const handleChangeTask = (e) => {
@@ -25,29 +41,34 @@ function UserDescriptionOfTask() {
     setDescValue(e.target.value);
   };
 
-  return (
-    <div className="user-description-of-task-container">
-      <input
-        className="input-uDesc"
-        value={taskValue}
-        type="text"
-        onChange={handleChangeTask}
-        placeholder="Task"
-      />
-      <input
-        className="input-uDesc"
-        value={descValue}
-        type="text"
-        onChange={handleChangeDesc}
-        placeholder="Description"
-      />
-      <div className="dropbox-bar">
-        <button className="create-task-button" onClick={handleCreate}>
-          Create
-        </button>
+  if (isVisible) {
+    return (
+      <div className="user-description-of-task-container">
+        <input
+          className="input-uDesc"
+          value={taskValue}
+          type="text"
+          onChange={handleChangeTask}
+          placeholder="Task"
+        />
+        <input
+          className="input-uDesc"
+          value={descValue}
+          type="text"
+          onChange={handleChangeDesc}
+          placeholder="Description"
+        />
+        <div className="dropbox-bar">
+          <button className="create-task-button" onClick={handleCreate}>
+            Create
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  if (!isVisible) {
+    return <></>;
+  }
 }
 
 export default UserDescriptionOfTask;

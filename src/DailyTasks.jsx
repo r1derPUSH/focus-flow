@@ -15,7 +15,10 @@ function DailyTasks() {
           <span className="span-daily-tasks-text">Daily Tasks: </span>
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
-              <UserDescriptionOfTask />
+              <UserDescriptionOfTask
+                isVisible={isUserDescriptionVisible}
+                setIsVisible={setIsUserDescriptionVisible}
+              />
             </div>
           ) : (
             ""
