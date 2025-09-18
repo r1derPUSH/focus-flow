@@ -21,6 +21,13 @@ const Register = () => {
   const [isStarted, setIsStarted] = useState(false);
   let kindOfAvatar = "";
 
+  if (img == avatar) {
+    kindOfAvatar = "woman";
+  } else if (img == avatar2) {
+    console.log("woman worked out");
+    kindOfAvatar = "man";
+  }
+
   const handleImgChange = () => {
     if (img == avatar) {
       setImg(avatar2);
@@ -28,6 +35,7 @@ const Register = () => {
     if (img == avatar2) {
       setImg(avatar);
     }
+    localStorage.setItem("user-image", kindOfAvatar);
   };
 
   function handleChangeName(e) {
@@ -36,13 +44,6 @@ const Register = () => {
 
   function handleChangeSurname(e) {
     setSurnameValue(e.target.value);
-  }
-
-  if (img == avatar) {
-    kindOfAvatar = "man";
-  } else if (img == avatar2) {
-    console.log("woman worked out");
-    kindOfAvatar = "woman";
   }
 
   // console.log(kindOfAvatar);
@@ -65,7 +66,6 @@ const Register = () => {
       // return;
     }
     localStorage.setItem("name", nameValue || "Guest");
-    localStorage.setItem("user-image", kindOfAvatar);
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
