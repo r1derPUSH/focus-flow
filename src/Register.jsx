@@ -37,8 +37,23 @@ const Register = () => {
   }
 
   async function handleStart() {
+    if (!nameValue.trim()) {
+      alert("bad :(");
+      return;
+    }
     localStorage.setItem("name", nameValue);
     localStorage.setItem("surname", surnameValue);
+    setStyles(true);
+    await wait(1500);
+    setIsStarted(true);
+  }
+
+  async function handleSkip() {
+    if (!nameValue.trim()) {
+      // alert("Bad surname! :(");
+      // return;
+    }
+    localStorage.setItem("name", nameValue || "Guest");
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
@@ -97,7 +112,9 @@ const Register = () => {
             </div>
           </div>
           <div className="start-buttons">
-            <button className="skip-btn">Skip</button>
+            <button onClick={handleSkip} className="skip-btn">
+              Skip
+            </button>
             <button onClick={handleStart} className="start-btn">
               Start
             </button>

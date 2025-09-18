@@ -4,6 +4,8 @@ import DigitalClock from "./DigitalClock";
 const Greeting = ({ name, surname }) => {
   const [time, setTime] = useState(new Date());
   const hour = getTime();
+  const userName = localStorage.getItem("name");
+  const userSurname = localStorage.getItem("surname");
   const [timeOfDay, setTimeOfDay] = useState(() => {
     return hour >= 6 && hour <= 12
       ? "Morning"
@@ -35,7 +37,7 @@ const Greeting = ({ name, surname }) => {
     <div className="flex-bar">
       <div className="greeting-div">
         <span className="greeting-text">
-          Good {timeOfDay}, {name} 👋
+          Good {timeOfDay}, {userName} 👋
         </span>
         <DigitalClock />
       </div>
