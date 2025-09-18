@@ -25,7 +25,7 @@ function Header({ name, surname }) {
                     : avatar
                 }
                 alt=""
-                className="notification"
+                className="avatar-header"
               />
             </div>
           </div>

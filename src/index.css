@@ -199,9 +199,10 @@ body {
 }
 
 .logotype,
-.notification {
+.avatar-header {
   width: clamp(8vw, 12vw, 15vw);
   height: auto;
+  border-radius: 50%;
 }
 
 .notification {
