@@ -41,6 +41,7 @@ const Register = () => {
   if (img == avatar) {
     kindOfAvatar = "man";
   } else if (img == avatar2) {
+    console.log("woman worked out");
     kindOfAvatar = "woman";
   }
 
@@ -64,6 +65,7 @@ const Register = () => {
       // return;
     }
     localStorage.setItem("name", nameValue || "Guest");
+    localStorage.setItem("user-image", kindOfAvatar);
     setStyles(true);
     await wait(1500);
     setIsStarted(true);

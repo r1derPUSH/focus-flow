@@ -5,6 +5,7 @@ import avatar from "./assets/man-avatar.jpg";
 import avatar2 from "./assets/woman-avatar.png";
 
 function Header({ name, surname }) {
+  const isManOrWoman = localStorage.getItem("user-image");
   return (
     <>
       <header className="header-tag">
@@ -15,7 +16,17 @@ function Header({ name, surname }) {
               <h1 className="logo-text">Focus Flow</h1>
             </div>
             <div>
-              <img src={notification} alt="" className="notification" />
+              <img
+                src={
+                  isManOrWoman === "man"
+                    ? avatar
+                    : isManOrWoman === "woman"
+                    ? avatar2
+                    : avatar
+                }
+                alt=""
+                className="notification"
+              />
             </div>
           </div>
         </div>
