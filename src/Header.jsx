@@ -1,6 +1,8 @@
 import logo from "./assets/logo.png";
 import notification from "./assets/notification.png";
 import Greeting from "./Greeting";
+import avatar from "./assets/man-avatar.jpg";
+import avatar2 from "./assets/woman-avatar.png";
 
 function Header({ name, surname }) {
   return (

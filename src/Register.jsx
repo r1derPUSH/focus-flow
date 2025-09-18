@@ -19,6 +19,8 @@ const Register = () => {
   const [styles, setStyles] = useState(false);
   const [img, setImg] = useState(avatar);
   const [isStarted, setIsStarted] = useState(false);
+  let kindOfAvatar = "";
+
   const handleImgChange = () => {
     if (img == avatar) {
       setImg(avatar2);
@@ -36,6 +38,13 @@ const Register = () => {
     setSurnameValue(e.target.value);
   }
 
+  if (img == avatar) {
+    kindOfAvatar = "man";
+  } else if (img == avatar2) {
+    kindOfAvatar = "woman";
+  }
+
+  // console.log(kindOfAvatar);
   async function handleStart() {
     if (!nameValue.trim()) {
       alert("bad :(");
@@ -43,6 +52,7 @@ const Register = () => {
     }
     localStorage.setItem("name", nameValue);
     localStorage.setItem("surname", surnameValue);
+    localStorage.setItem("user-image", kindOfAvatar);
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
@@ -60,7 +70,7 @@ const Register = () => {
   }
 
   if (!isStarted) {
-    console.log("worked out if");
+    // console.log("worked out if");
     return (
       <section
         className={!styles ? "login-section" : "login-section-activated"}
