@@ -24,14 +24,14 @@ function UserDescriptionOfTask() {
     <div className="user-description-of-task-container">
       <input
         className="input-uDesc"
-        value={task}
+        value={taskValue}
         type="text"
         onChange={handleChangeTask}
         placeholder="Task"
       />
       <input
         className="input-uDesc"
-        value={desc}
+        value={descValue}
         type="text"
         onChange={handleChangeDesc}
         placeholder="Description"
