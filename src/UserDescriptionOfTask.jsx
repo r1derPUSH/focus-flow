@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
+function UserDescriptionOfTask({ isVisible, setIsVisible, setTasks }) {
+  const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const [taskValue, setTaskValue] = useState("");
   const [task, setTask] = useState([]);
   const [descValue, setDescValue] = useState("");
@@ -15,6 +16,7 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
     // setDesc(...desc, descValue);
     setTask(tasks);
     setDesc(descs);
+    setTasks((prev) => [...prev, taskValue]);
     localStorage.setItem(
       "task-name",
       JSON.stringify([

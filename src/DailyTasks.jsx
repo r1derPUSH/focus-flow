@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
 
 function DailyTasks() {
@@ -10,11 +10,16 @@ function DailyTasks() {
   });
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
+
+  useEffect(() => {
+    // setTasks([...tasks, localStorageTasksArr]);
+    console.log("Tasks: " + tasks);
+  }, [tasks]);
+
   function handleAddTask() {
     setIsUserDescriptionVisible(true);
-    setTasks([...tasks], inputValue);
-    console.log(tasks);
   }
+  console.log(tasks);
   return (
     <>
       <div className="tasks-flex-div">
@@ -23,6 +28,7 @@ function DailyTasks() {
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
               <UserDescriptionOfTask
+                setTasks={setTasks}
                 setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}
