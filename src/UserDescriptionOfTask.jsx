@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
   const [taskValue, setTaskValue] = useState("");
@@ -43,7 +44,13 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
 
   if (isVisible) {
     return (
-      <div className="user-description-of-task-container">
+      <motion.div
+        className="user-description-of-task-container"
+        initial={{ opacity: 0, y: 20 }} // start
+        animate={{ opacity: 1, y: 0 }} // after showing
+        exit={{ opacity: 0, y: -20 }} // if it deletes
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         <input
           className="input-uDesc"
           value={taskValue}
@@ -63,7 +70,7 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
             Create
           </button>
         </div>
-      </div>
+      </motion.div>
     );
   }
   if (!isVisible) {

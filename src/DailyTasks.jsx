@@ -12,7 +12,7 @@ function DailyTasks() {
     useState(false);
   function handleAddTask() {
     setIsUserDescriptionVisible(true);
-    setTasks([...localStorageTasksArr, inputValue]);
+    setTasks([...tasks], inputValue);
     console.log(tasks);
   }
   return (
