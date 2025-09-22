@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function UserDescriptionOfTask({ isVisible, setIsVisible, setTasks }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
@@ -9,7 +9,11 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setTasks }) {
   const [desc, setDesc] = useState("");
   // const [difficulty, setDifficulty] = useState("");
 
-  const handleCreate = () => {
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function handleCreate() {
     const tasks = [...task, taskValue];
     const descs = [...desc, descValue];
     // const
@@ -31,10 +35,11 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setTasks }) {
         descs,
       ])
     );
+    await wait(100);
     setTaskValue("");
     setDescValue("");
     setIsVisible(false);
-  };
+  }
 
   const handleChangeTask = (e) => {
     setTaskValue(e.target.value);
@@ -48,9 +53,9 @@ function UserDescriptionOfTask({ isVisible, setIsVisible, setTasks }) {
     return (
       <motion.div
         className="user-description-of-task-container"
-        initial={{ opacity: 0, y: 20 }} // start
-        animate={{ opacity: 1, y: 0 }} // after showing
-        exit={{ opacity: 0, y: -20 }} // if it deletes
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20, scale: 0.95 }} // плавне зникнення
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <input

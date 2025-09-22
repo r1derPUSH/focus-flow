@@ -451,25 +451,51 @@ body {
 }
 
 .create-task-button {
-  width: auto;
-  border-radius: 25px;
-  height: auto;
-  background-color: hsl(0, 0%, 26%); /* під колір діву */
-  border: 1px solid #444;
-  /* border-radius: 8px; */
-  padding: 2vh 2vw;
-  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
   font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #2a2a2a; /* темний фон під проект */
+  border: 1px solid #444;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .create-task-button:hover {
-  background-color: #3a3a3a; /* трохи світліший відтінок */
+  background: #3a3a3a; /* трохи світліший для hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
 }
 
 .create-task-button:active {
-  transform: scale(0.97); /* ефект натискання */
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Легкий внутрішній glow при hover */
+.create-task-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.create-task-button:hover::after {
+  left: 125%;
 }
 
 @media (max-width: 800px) {
