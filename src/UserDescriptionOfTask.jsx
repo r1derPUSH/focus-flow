@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function UserDescriptionOfTask({ isVisible, setIsVisible }) {
+function UserDescriptionOfTask({ isVisible, setIsVisible, setInputValue }) {
   const [taskValue, setTaskValue] = useState("");
   const [task, setTask] = useState([]);
   const [descValue, setDescValue] = useState("");

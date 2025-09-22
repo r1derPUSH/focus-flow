@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
 
 function DailyTasks() {
-  const [tasks, setTasks] = useState([]);
+  const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
+  const [inputValue, setInputValue] = useState("");
+  const [tasks, setTasks] = useState(() => {
+    const arr = localStorageTasksArr ? localStorageTasksArr : [];
+    return arr;
+  });
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
   function handleAddTask() {
     setIsUserDescriptionVisible(true);
+    setTasks([...localStorageTasksArr, inputValue]);
+    console.log(tasks);
   }
   return (
     <>
@@ -16,6 +23,7 @@ function DailyTasks() {
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
               <UserDescriptionOfTask
+                setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}
               />
