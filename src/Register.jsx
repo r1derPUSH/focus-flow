@@ -19,7 +19,7 @@ const Register = () => {
   const [styles, setStyles] = useState(false);
   const [img, setImg] = useState(avatar);
   const [isStarted, setIsStarted] = useState(false);
-  let kindOfAvatar = "";
+  let kindOfAvatar = "man";
 
   if (img == avatar) {
     kindOfAvatar = "woman";

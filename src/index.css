@@ -200,7 +200,7 @@ body {
 
 .logotype,
 .avatar-header {
-  width: clamp(8vw, 12vw, 15vw);
+  width: clamp(6vw, 10vw, 12vw);
   height: auto;
   border-radius: 50%;
 }
