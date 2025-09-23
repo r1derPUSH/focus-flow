@@ -1,6 +1,10 @@
 function UserTask({ task, tasks, setTasks }) {
   const handleRemove = () => {
     setTasks(tasks.filter((item) => item !== task));
+    localStorage.setItem(
+      "task-name",
+      JSON.stringify(tasks.filter((item) => item !== task))
+    );
   };
 
   return (
