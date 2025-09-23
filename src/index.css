@@ -504,13 +504,19 @@ body {
 
 /* UserTask component */
 
+/* .flexTask {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+} */
+
 .user-task {
   display: flex;
   /* flex-direction: column; */
   justify-content: space-between;
   background: linear-gradient(145deg, #2e2e2e, #262626);
   color: #ffffff;
-  padding: 1.5vh 2vw;
+  padding: 3vh 2vw;
   margin: 1vh 0;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
@@ -524,11 +530,19 @@ body {
   background: linear-gradient(145deg, #353535, #292929);
 }
 
+.taskAndDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Назва таски */
 .user-task .task-name {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
-  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
+  /* margin-bottom: 0.5vh; */
+  margin-right: 2vw;
   word-break: break-word;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -538,7 +552,7 @@ body {
 .user-task .task-description {
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   color: #bfbfbf;
-  margin-bottom: 1vh;
+  /* margin-bottom: 1vh;÷ */
   word-break: break-word;
   line-height: 1.4;
 }

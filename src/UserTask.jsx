@@ -1,13 +1,23 @@
-function UserTask() {
+function UserTask({ task, tasks, setTasks }) {
+  const handleRemove = () => {
+    setTasks(tasks.filter((item) => item !== task));
+  };
+
   return (
+    // <div className="flexTask">
     <div className="user-task">
-      <span className="task-name">Task</span>
-      <span className="task-description">Desc</span>
+      <div className="taskAndDesc">
+        <span className="task-name">{task}</span>
+        <span className="task-description">Desc</span>
+      </div>
       <div className="task-buttons">
         <button className="focus">Focus</button>
-        <button className="delete">Remove</button>
+        <button onClick={handleRemove} className="delete">
+          Remove
+        </button>
       </div>
     </div>
+    // </div>
   );
 }
 
