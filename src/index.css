@@ -402,9 +402,10 @@ body {
 /* UserDescOfTask */
 
 .user-description-of-task-container {
-  margin: 15px;
+  margin: 2vh;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
 
@@ -413,6 +414,7 @@ body {
 }
 
 .task-user-description {
+  margin-left: 3.5vw;
   width: 70%;
   height: 10vh;
   border-radius: 25px;
@@ -587,6 +589,9 @@ body {
 }
 
 @media (max-width: 800px) {
+  .task-user-description {
+    margin-left: 0;
+  }
   .user-task {
     flex-direction: column;
     align-items: center;
