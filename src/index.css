@@ -540,7 +540,7 @@ body {
 .user-task .task-name {
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
-  margin-top: 0.5vh;
+  /* margin-top: 0.5vh; */
   /* margin-bottom: 0.5vh; */
   margin-right: 2vw;
   word-break: break-word;
