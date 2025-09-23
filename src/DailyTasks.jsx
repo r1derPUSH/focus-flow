@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
+import UserTask from "./UserTask";
 
 function DailyTasks() {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
@@ -45,7 +46,11 @@ function DailyTasks() {
         </div>
         <div>
           {/* <span>Tasks:</span> */}
-          <div className="tasks-container"></div>
+          <div className="tasks-container">
+            {tasks.map((item) => {
+              return <UserTask task={item} />;
+            })}
+          </div>
         </div>
       </div>
     </>

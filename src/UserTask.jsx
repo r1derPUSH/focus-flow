@@ -5,6 +5,7 @@ function UserTask() {
       <span className="task-description">Desc</span>
       <div className="task-buttons">
         <button className="focus">Focus</button>
+        <button className="delete">Remove</button>
       </div>
     </div>
   );
