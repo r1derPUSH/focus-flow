@@ -4,9 +4,16 @@ import UserTask from "./UserTask";
 
 function DailyTasks() {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
+  const localStorageDescsArr = JSON.parse(
+    localStorage.getItem("task-descripton")
+  );
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState(() => {
     const arr = localStorageTasksArr ? localStorageTasksArr : [];
+    return arr;
+  });
+  const [descs, setDescs] = useState(() => {
+    const arr = localStorageDescsArr ? localStorageDescsArr : [];
     return arr;
   });
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
@@ -30,6 +37,7 @@ function DailyTasks() {
             <div className="task-user-description">
               <UserDescriptionOfTask
                 setTasks={setTasks}
+                setDescs={setDescs}
                 setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}

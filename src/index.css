@@ -520,7 +520,7 @@ body {
   margin: 1vh 0;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
-  width: 50vw;
+  width: 70vw;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
@@ -603,6 +603,13 @@ body {
 }
 
 @media (max-width: 800px) {
+  .taskAndDesc {
+    display: flex;
+    flex-direction: column;
+  }
+  .user-task .task-buttons {
+    margin-top: 2vh;
+  }
   .task-user-description {
     margin-left: 0;
   }
