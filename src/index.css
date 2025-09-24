@@ -203,6 +203,11 @@ body {
   width: clamp(6vw, 10vw, 12vw);
   height: auto;
   border-radius: 50%;
+  /* border: 3px solid white; */
+}
+
+.avatar-header {
+  border: 3px solid white;
 }
 
 .notification {
@@ -553,8 +558,12 @@ body {
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   color: #bfbfbf;
   /* margin-bottom: 1vh;÷ */
+  margin-top: 1vh;
   word-break: break-word;
   line-height: 1.4;
+  white-space: nowrap; /* не переносити текст на новий рядок */
+  overflow: hidden; /* ховати зайвий текст */
+  text-overflow: ellipsis;
 }
 
 /* Контейнер для кнопок */
