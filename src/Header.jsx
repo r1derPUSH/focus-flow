@@ -3,6 +3,7 @@ import notification from "./assets/notification.png";
 import Greeting from "./Greeting";
 import avatar from "./assets/man-avatar.jpg";
 import avatar2 from "./assets/woman-avatar.png";
+import taskImg from "./assets/tasks-image.png";
 
 function Header({ name, surname }) {
   const isManOrWoman = localStorage.getItem("user-image");
@@ -15,7 +16,8 @@ function Header({ name, surname }) {
               <img src={logo} alt="" className="logotype" />
               <h1 className="logo-text">Focus Flow</h1>
             </div>
-            <div>
+            <div className="flex-header-images-rightSide">
+              <img className="task-img" src={taskImg} alt="" />
               <img
                 src={
                   isManOrWoman === "man"

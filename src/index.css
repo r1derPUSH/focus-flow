@@ -200,10 +200,22 @@ body {
 
 .logotype,
 .avatar-header {
-  width: clamp(6vw, 10vw, 12vw);
+  width: clamp(8vw, 12vw, 14vw);
   height: auto;
   border-radius: 50%;
   /* border: 3px solid white; */
+}
+
+.flex-header-images-rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-img {
+  margin-right: 3vw;
+  width: clamp(8vw, 12vw, 14vw);
+  height: auto;
 }
 
 .avatar-header {
