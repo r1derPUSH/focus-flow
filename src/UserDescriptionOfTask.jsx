@@ -41,10 +41,12 @@ function UserDescriptionOfTask({
         descs,
       ])
     );
+    localStorage.setItem(taskValue, descValue);
     await wait(100);
     setTaskValue("");
     setDescValue("");
     setIsVisible(false);
+    // console.log
   }
 
   const handleChangeTask = (e) => {

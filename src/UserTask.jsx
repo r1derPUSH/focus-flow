@@ -12,7 +12,7 @@ function UserTask({ task, tasks, setTasks }) {
     <div className="user-task">
       <div className="taskAndDesc">
         <span className="task-name">{task}</span>
-        <span className="task-description">Desc</span>
+        <span className="task-description">{localStorage.getItem(task)}</span>
       </div>
       <div className="task-buttons">
         <button className="focus">Focus</button>
