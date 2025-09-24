@@ -16,7 +16,7 @@ function UserTask({ task, tasks, setTasks }) {
       </div>
       <div className="task-buttons">
         <button className="focus">Focus</button>
-        <button className="finish-task">Finish</button>
+        <button className="finish-button">Finish</button>
         <button onClick={handleRemove} className="delete">
           Remove
         </button>

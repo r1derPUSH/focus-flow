@@ -216,6 +216,7 @@ body {
   margin-right: 3vw;
   width: clamp(8vw, 12vw, 14vw);
   height: auto;
+  cursor: pointer;
 }
 
 .avatar-header {
@@ -570,12 +571,12 @@ body {
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   color: #bfbfbf;
   /* margin-bottom: 1vh;÷ */
-  margin-top: 1vh;
   word-break: break-word;
   line-height: 1.4;
-  white-space: nowrap; /* не переносити текст на новий рядок */
-  overflow: hidden; /* ховати зайвий текст */
-  text-overflow: ellipsis;
+  max-width: 30vw; /* Максимальна ширина контейнера */
+  white-space: nowrap; /* Текст в один рядок */
+  overflow: hidden; /* Обрізати зайве */
+  text-overflow: ellipsis; /* Додати "..." в кінці, якщо текст не вміщується */
 }
 
 /* Контейнер для кнопок */
@@ -600,8 +601,9 @@ body {
 
 .user-task button.focus:hover {
   background: linear-gradient(135deg, #5dd36e, #47a148);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05); /* Легка анімація збільшення */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6); */
 }
 
 /* Кнопка Delete */
@@ -619,11 +621,54 @@ body {
 
 .user-task button.delete:hover {
   background: linear-gradient(135deg, #ff5c5c, #d43f3f);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05); /* Легка анімація збільшення */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 800px) {
+.finish-button {
+  padding: 1vh 2vw; /* Зручний розмір кнопки */
+  background: linear-gradient(
+    135deg,
+    #6a5acd,
+    #00bfff
+  ); /* Градієнт фіолетово-блакитний */
+  color: #fff; /* Білий текст */
+  font-weight: 600; /* Трохи жирніший шрифт */
+  border: none;
+  border-radius: 12px; /* Округлі кути */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Легка тінь */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Плавні ефекти при наведенні */
+  text-transform: uppercase; /* Великі літери */
+}
+
+.finish-button:hover {
+  transform: scale(1.05); /* Легка анімація збільшення */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    135deg,
+    #7b68ee,
+    #1e90ff
+  ); /* Трохи світліший градієнт */
+}
+
+.finish-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  .task-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task-buttons > button {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 1200px) {
   .taskAndDesc {
     display: flex;
     flex-direction: column;
@@ -632,8 +677,18 @@ body {
     margin-top: 2vh;
   }
   .task-user-description {
+    margin-top: 1vh;
     margin-left: 0;
   }
+
+  .user-task .task-description {
+    margin-top: 2vh;
+    max-width: 50vw; /* Максимальна ширина контейнера */
+    white-space: nowrap; /* Текст в один рядок */
+    overflow: hidden; /* Обрізати зайве */
+    text-overflow: ellipsis; /* Додати "..." в кінці, якщо текст не вміщується */
+  }
+
   .user-task {
     flex-direction: column;
     align-items: center;
@@ -649,6 +704,11 @@ body {
 
   .tasks-div > button {
     margin-top: 3vh;
+  }
+
+  .task-buttons > button {
+    padding: 0.5vh;
+    width: 22vw;
   }
 
   .task-user-description {
