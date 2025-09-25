@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 function ProgressBar() {
+  const arrOfTasksLn = localStorage.getItem("task-name");
+  console.log(arrOfTasksLn);
   const [tasks, setTasks] = useState([]);
+  const [progressBarValue, setProgressBarValue] = useState(arrOfTasksLn.length);
 
   return (
     <section className="progress-bar-section">
-      <div className="progress-bar">
-        <div className="progress-bar-box">
-          <div className="text-and-bar">
-            <span className="progressBar-text">Your Progress...</span>
-            <div className="progress-bar-outside">
-              <div className="progress-bar-inside"></div>
-            </div>
-          </div>
+      <div className="progressBar">
+        <div className="progress-bar">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${progressBarValue}%` }}
+          ></div>
         </div>
+        <div className="progress-label">50% </div>
       </div>
     </section>
   );
