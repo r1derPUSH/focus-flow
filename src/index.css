@@ -657,6 +657,14 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* progress-bar */
+
+.progress-bar-box {
+  background-color: #becdde;
+  width: ;
+  height: 80vh;
+}
+
 @media (max-width: 600px) {
   .task-buttons {
     display: flex;
