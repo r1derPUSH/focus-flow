@@ -5,6 +5,7 @@ function ProgressBar() {
   console.log(arrOfTasksLn);
   const [tasks, setTasks] = useState([]);
   const [progressBarValue, setProgressBarValue] = useState(arrOfTasksLn.length);
+  //   const completedTasks =
 
   return (
     <section className="progress-bar-section">
