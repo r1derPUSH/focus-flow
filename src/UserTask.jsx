@@ -10,9 +10,20 @@ function UserTask({ task, tasks, setTasks }) {
     );
   };
 
+  const [completedTasks, setCompletedTasks] = useState(0);
+
+  console.log(task);
+
   const handleFinish = () => {
+    setCompletedTasks(completedTasks + 1);
+    setTasks(tasks.filter((item) => item !== task));
     setFinishedTasks([...finishedTasks, task]);
     localStorage.setItem("total-tasks", tasks.length);
+    localStorage.setItem("completed-tasks", completedTasks);
+    localStorage.setItem(
+      "task-name",
+      JSON.stringify(tasks.filter((item) => item !== task))
+    );
   };
 
   return (

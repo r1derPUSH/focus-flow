@@ -5,6 +5,9 @@ function ProgressBar() {
   console.log(arrOfTasksLn);
   const [tasks, setTasks] = useState([]);
   const [progressBarValue, setProgressBarValue] = useState(15);
+
+  const completedTasks = localStorage.getItem("completed-tasks");
+  const totalTasks = localStorage.getItem("total-tasks");
   //   const completedTasks =
 
   return (

@@ -55,8 +55,15 @@ function DailyTasks() {
         <div>
           {/* <span>Tasks:</span> */}
           <div className="tasks-container">
-            {tasks.map((item) => {
-              return <UserTask task={item} setTasks={setTasks} tasks={tasks} />;
+            {tasks.map((item, idx) => {
+              return (
+                <UserTask
+                  key={idx}
+                  task={item}
+                  setTasks={setTasks}
+                  tasks={tasks}
+                />
+              );
             })}
           </div>
         </div>
