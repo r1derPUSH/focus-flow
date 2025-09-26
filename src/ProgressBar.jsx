@@ -4,7 +4,7 @@ function ProgressBar() {
   const arrOfTasksLn = localStorage.getItem("task-name");
   console.log(arrOfTasksLn);
   const [tasks, setTasks] = useState([]);
-  const [progressBarValue, setProgressBarValue] = useState(arrOfTasksLn.length);
+  const [progressBarValue, setProgressBarValue] = useState(15);
   //   const completedTasks =
 
   return (
@@ -16,7 +16,7 @@ function ProgressBar() {
             style={{ width: `${progressBarValue}%` }}
           ></div>
         </div>
-        <div className="progress-label">50% </div>
+        <div className="progress-label">{progressBarValue}% </div>
       </div>
     </section>
   );

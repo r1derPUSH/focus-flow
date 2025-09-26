@@ -12,7 +12,7 @@ function UserTask({ task, tasks, setTasks }) {
 
   const handleFinish = () => {
     setFinishedTasks([...finishedTasks, task]);
-    localStorage.setItem("finished-tasks", JSON.parse(finishedTasks));
+    localStorage.setItem("total-tasks", tasks.length);
   };
 
   return (
