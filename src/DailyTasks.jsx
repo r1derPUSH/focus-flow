@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
 import UserTask from "./UserTask";
 
-function DailyTasks() {
+function DailyTasks({ setTotalTasks }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
     localStorage.getItem("task-descripton")
@@ -19,13 +19,19 @@ function DailyTasks() {
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
 
-  useEffect(() => {
-    // setTasks([...tasks, localStorageTasksArr]);
-    console.log("Tasks: " + tasks);
-  }, [tasks]);
+  // useEffect(() => {
+  //   // setTasks([...tasks, localStorageTasksArr]);
+  //   console.log("Tasks: " + tasks);
+  // }, [tasks]);
 
   function handleAddTask() {
     setIsUserDescriptionVisible(true);
+    localStorage.setItem("total-tasks", tasks.length);
+    localStorage.setItem(
+      "task-name",
+      JSON.stringify(tasks.filter((item) => item !== task))
+    );
+    setTotalTasks(tasks.length);
   }
   console.log(tasks);
   return (

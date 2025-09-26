@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function ProgressBar() {
+function ProgressBar({ totalTasks }) {
+  const [completedTasks, setCompletedTasks] = useState(
+    Number(localStorage.getItem("completed-tasks"))
+  );
+  const avg = (completedTasks / totalTasks) * 100;
+  console.log(avg);
+
+  useEffect(() => {
+    console.log(totalTasks);
+  }, [totalTasks]);
+
   const arrOfTasksLn = localStorage.getItem("task-name");
   console.log(arrOfTasksLn);
   const [tasks, setTasks] = useState([]);
-  const [progressBarValue, setProgressBarValue] = useState(15);
+  const [progressBarValue, setProgressBarValue] = useState(avg);
 
-  const completedTasks = localStorage.getItem("completed-tasks");
-  const totalTasks = localStorage.getItem("total-tasks");
   //   const completedTasks =
 
   return (
