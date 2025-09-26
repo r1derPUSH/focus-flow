@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-function UserTask({ task, tasks, setTasks }) {
+function UserTask({
+  task,
+  tasks,
+  setTasks,
+  setCompletedTasks,
+  completedTasks,
+}) {
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
     setTasks(tasks.filter((item) => item !== task));
@@ -10,7 +16,7 @@ function UserTask({ task, tasks, setTasks }) {
     );
   };
 
-  const [completedTasks, setCompletedTasks] = useState(0);
+  // const [completedTasks, setCompletedTasks] = useState(0);
 
   console.log(task);
 

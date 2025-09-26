@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
-function ProgressBar({ totalTasks }) {
-  const [completedTasks, setCompletedTasks] = useState(
-    Number(localStorage.getItem("completed-tasks"))
-  );
+function ProgressBar({ totalTasks, completedTasks }) {
   const avg = (completedTasks / totalTasks) * 100;
+  console.log(completedTasks);
+  console.log(totalTasks);
   console.log(avg);
 
   useEffect(() => {

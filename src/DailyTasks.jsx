@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
 import UserTask from "./UserTask";
 
-function DailyTasks({ setTotalTasks }) {
+function DailyTasks({
+  setTotalTasks,
+  setCompletedTasks,
+  completedTasks,
+  totalTasks,
+}) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
     localStorage.getItem("task-descripton")
@@ -42,6 +47,7 @@ function DailyTasks({ setTotalTasks }) {
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
               <UserDescriptionOfTask
+                completedTasks={completedTasks}
                 setTasks={setTasks}
                 setDescs={setDescs}
                 setInputValue={setInputValue}
@@ -64,6 +70,8 @@ function DailyTasks({ setTotalTasks }) {
             {tasks.map((item, idx) => {
               return (
                 <UserTask
+                  completedTasks={completedTasks}
+                  setCompletedTasks={setCompletedTasks}
                   key={idx}
                   task={item}
                   setTasks={setTasks}
