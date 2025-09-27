@@ -296,6 +296,10 @@ body {
 
 /* progress-bar */
 
+/* Focus Mode */
+
+/* Endpoint of Focus Mode */
+
 .progress-bar-section {
   display: flex;
   flex-direction: column;
@@ -349,6 +353,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.focusMode-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.focusMode-box-disabled {
+  display: none;
 }
 
 .progress-bar {
