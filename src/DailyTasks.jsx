@@ -7,6 +7,7 @@ function DailyTasks({
   setCompletedTasks,
   completedTasks,
   totalTasks,
+  setIsFocusMode,
 }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
@@ -70,6 +71,7 @@ function DailyTasks({
             {tasks.map((item, idx) => {
               return (
                 <UserTask
+                  setIsFocusMode={setIsFocusMode}
                   completedTasks={completedTasks}
                   setCompletedTasks={setCompletedTasks}
                   key={idx}

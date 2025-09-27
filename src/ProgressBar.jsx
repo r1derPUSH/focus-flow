@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ProgressBar({ totalTasks, completedTasks }) {
+function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
   const avg = (completedTasks / totalTasks) * 100;
   console.log(completedTasks);
   console.log(totalTasks);
@@ -18,15 +18,21 @@ function ProgressBar({ totalTasks, completedTasks }) {
   //   const completedTasks =
 
   return (
-    <section className="progress-bar-section">
+    <section
+      className={
+        isFocusMode
+          ? "progress-bar-section"
+          : "progress-bar-section-focusModeActivated"
+      }
+    >
       <div className="progressBar">
-        <div className="progress-bar">
+        {/* <div className="progress-bar">
           <div
             className="progress-bar-fill"
             style={{ width: `${progressBarValue}%` }}
           ></div>
         </div>
-        <div className="progress-label">{progressBarValue}% </div>
+        <div className="progress-label">{progressBarValue}% </div> */}
       </div>
     </section>
   );

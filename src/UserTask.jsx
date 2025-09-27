@@ -6,6 +6,7 @@ function UserTask({
   setTasks,
   setCompletedTasks,
   completedTasks,
+  setIsFocusMode,
 }) {
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
@@ -14,6 +15,10 @@ function UserTask({
       "task-name",
       JSON.stringify(tasks.filter((item) => item !== task))
     );
+  };
+
+  const handleFocus = () => {
+    setIsFocusMode(true);
   };
 
   // const [completedTasks, setCompletedTasks] = useState(0);
@@ -40,7 +45,9 @@ function UserTask({
         <span className="task-description">{localStorage.getItem(task)}</span>
       </div>
       <div className="task-buttons">
-        <button className="focus">Focus</button>
+        <button className="focus" onClick={handleFocus}>
+          Focus
+        </button>
         <button className="finish-button" onClick={handleFinish}>
           Finish
         </button>
