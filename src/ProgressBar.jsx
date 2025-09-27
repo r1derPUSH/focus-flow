@@ -45,6 +45,7 @@ function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
             <input type="text" placeholder="Set work time in minutes" />
             <input type="text" placeholder="Set break time in minutes" />
           </div>
+          <div className="focusMode-timer-span">00:00</div>
         </div>
         <div className="focusMode-tips">
           <span>

@@ -298,6 +298,25 @@ body {
 
 /* Focus Mode */
 
+.focusMode-task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.focusMode-task-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.focusMode-pomodoro-timer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20vh;
+  margin-bottom: 5vh;
+}
+
 /* Endpoint of Focus Mode */
 
 .progress-bar-section {
@@ -331,8 +350,8 @@ body {
 .progress-bar-section-focusModeActivated {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   background: linear-gradient(135deg, #212121, #242424);
   padding: 2rem 1rem;
   border-radius: 14px;
@@ -358,8 +377,8 @@ body {
 .focusMode-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .focusMode-box-disabled {
