@@ -16,6 +16,7 @@ function MainSection({ name, surname }) {
         completedTasks={completedTasks}
       />
       <DailyTasks
+        isFocusMode={isFocusMode}
         setIsFocusMode={setIsFocusMode}
         setTotalTasks={setTotalTasks}
         setCompletedTasks={setCompletedTasks}

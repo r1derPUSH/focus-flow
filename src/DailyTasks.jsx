@@ -8,6 +8,7 @@ function DailyTasks({
   completedTasks,
   totalTasks,
   setIsFocusMode,
+  isFocusMode,
 }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
@@ -42,7 +43,11 @@ function DailyTasks({
   console.log(tasks);
   return (
     <>
-      <div className="tasks-flex-div">
+      <div
+        className={
+          !isFocusMode ? "tasks-flex-div" : "tasks-flex-div-focusMode-activated"
+        }
+      >
         <div className="tasks-div">
           <span className="span-daily-tasks-text">Daily Tasks: </span>
           {isUserDescriptionVisible ? (
@@ -71,6 +76,7 @@ function DailyTasks({
             {tasks.map((item, idx) => {
               return (
                 <UserTask
+                  isFocusMode={isFocusMode}
                   setIsFocusMode={setIsFocusMode}
                   completedTasks={completedTasks}
                   setCompletedTasks={setCompletedTasks}

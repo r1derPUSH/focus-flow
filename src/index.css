@@ -311,14 +311,16 @@ body {
   margin: 2rem auto;
 }
 
-@keyframes slideInFromLeft {
+@keyframes drawFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: scaleX(0);
     opacity: 0;
+    transform-origin: left;
   }
   100% {
-    transform: translateX(0);
+    transform: scaleX(1);
     opacity: 1;
+    transform-origin: left;
   }
 }
 
@@ -327,15 +329,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #1f1f1f;
+  background: linear-gradient(135deg, #212121, #242424);
   padding: 2rem 1rem;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 90%;
   height: 40vh;
   /* max-width: 600px; */
   margin: 2rem auto;
-  animation: slideInFromLeft 0.6s ease-out forwards;
+  animation: drawFromLeft 0.7s ease-out forwards;
+  transform-origin: left; /* обов’язково для ефекту “розкриття” */
 }
 
 .progressBar {
@@ -390,6 +393,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.tasks-flex-div-focusMode-activated {
+  display: none;
 }
 
 .tasks-div {
@@ -602,6 +609,10 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
   width: 70vw;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.user-task-focusMode-activated {
+  display: none;
 }
 
 .user-task:hover {

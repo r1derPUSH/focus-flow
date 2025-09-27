@@ -7,6 +7,7 @@ function UserTask({
   setCompletedTasks,
   completedTasks,
   setIsFocusMode,
+  isFocusMode,
 }) {
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
@@ -39,7 +40,9 @@ function UserTask({
 
   return (
     // <div className="flexTask">
-    <div className="user-task">
+    <div
+      className={!isFocusMode ? "user-task" : "user-task-focusMode-activated"}
+    >
       <div className="taskAndDesc">
         <span className="task-name">{task}</span>
         <span className="task-description">{localStorage.getItem(task)}</span>
