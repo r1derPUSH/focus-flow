@@ -25,14 +25,9 @@ function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
           : "progress-bar-section-focusModeActivated"
       }
     >
-      <div className="progressBar">
-        {/* <div className="progress-bar">
-          <div
-            className="progress-bar-fill"
-            style={{ width: `${progressBarValue}%` }}
-          ></div>
-        </div>
-        <div className="progress-label">{progressBarValue}% </div> */}
+      <div className="focusMode-task-container">
+        <span className="focusMode-task-name"></span>
+        <span className="focusMode-task-description"></span>
       </div>
     </section>
   );
