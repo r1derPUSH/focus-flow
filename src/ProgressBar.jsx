@@ -20,7 +20,7 @@ function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
   return (
     <section
       className={
-        isFocusMode
+        !isFocusMode
           ? "progress-bar-section"
           : "progress-bar-section-focusModeActivated"
       }
