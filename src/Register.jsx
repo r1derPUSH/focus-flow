@@ -46,7 +46,6 @@ const Register = () => {
     setSurnameValue(e.target.value);
   }
 
-  // console.log(kindOfAvatar);
   async function handleStart() {
     if (!nameValue.trim()) {
       alert("bad :(");
@@ -62,8 +61,6 @@ const Register = () => {
 
   async function handleSkip() {
     if (!nameValue.trim()) {
-      // alert("Bad surname! :(");
-      // return;
     }
     localStorage.setItem("name", nameValue || "Guest");
     setStyles(true);
@@ -72,7 +69,6 @@ const Register = () => {
   }
 
   if (!isStarted) {
-    // console.log("worked out if");
     return (
       <section
         className={!styles ? "login-section" : "login-section-activated"}
@@ -135,7 +131,6 @@ const Register = () => {
       </section>
     );
   } else if (isStarted) {
-    console.log("wordked out else if");
     return <MainContent name={nameValue} surname={surnameValue} />;
   }
 };

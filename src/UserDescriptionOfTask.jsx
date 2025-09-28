@@ -7,12 +7,10 @@ function UserDescriptionOfTask({
   setTasks,
   setDescs,
 }) {
-  const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const [taskValue, setTaskValue] = useState("");
   const [task, setTask] = useState([]);
   const [descValue, setDescValue] = useState("");
   const [desc, setDesc] = useState("");
-  // const [difficulty, setDifficulty] = useState("");
 
   function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -21,8 +19,6 @@ function UserDescriptionOfTask({
   async function handleCreate() {
     const tasks = [...task, taskValue];
     const descs = [...desc, descValue];
-    // const
-    // setDesc(...desc, descValue);
     setTask(tasks);
     setDesc(descs);
     setTasks((prev) => [...prev, taskValue]);
@@ -46,7 +42,6 @@ function UserDescriptionOfTask({
     setTaskValue("");
     setDescValue("");
     setIsVisible(false);
-    // console.log
   }
 
   const handleChangeTask = (e) => {

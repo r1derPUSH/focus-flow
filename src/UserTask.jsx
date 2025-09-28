@@ -22,10 +22,6 @@ function UserTask({
     setIsFocusMode(true);
   };
 
-  // const [completedTasks, setCompletedTasks] = useState(0);
-
-  console.log(task);
-
   const handleFinish = () => {
     setCompletedTasks(completedTasks + 1);
     setTasks(tasks.filter((item) => item !== task));
@@ -39,7 +35,6 @@ function UserTask({
   };
 
   return (
-    // <div className="flexTask">
     <div
       className={!isFocusMode ? "user-task" : "user-task-focusMode-activated"}
     >
@@ -59,7 +54,6 @@ function UserTask({
         </button>
       </div>
     </div>
-    // </div>
   );
 }
 
