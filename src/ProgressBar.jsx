@@ -1,26 +1,8 @@
 import { useEffect, useState } from "react";
 
 function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
-  const avg = (completedTasks / totalTasks) * 100;
-  console.log(completedTasks);
-  console.log(totalTasks);
-  console.log(avg);
-
-  useEffect(() => {
-    console.log(totalTasks);
-  }, [totalTasks]);
-
-  const arrOfTasksLn = localStorage.getItem("task-name");
-  console.log(arrOfTasksLn);
-  const [tasks, setTasks] = useState([]);
-  const [progressBarValue, setProgressBarValue] = useState(avg);
-
-  //
-
   const [workTime, setWorkTime] = useState(0);
   const [breakTime, setBreakTime] = useState(0);
-
-  //   const completedTasks =
 
   return (
     <section

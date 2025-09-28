@@ -26,11 +26,6 @@ function DailyTasks({
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
 
-  // useEffect(() => {
-  //   // setTasks([...tasks, localStorageTasksArr]);
-  //   console.log("Tasks: " + tasks);
-  // }, [tasks]);
-
   function handleAddTask() {
     setIsUserDescriptionVisible(true);
     localStorage.setItem("total-tasks", tasks.length);
@@ -71,7 +66,6 @@ function DailyTasks({
           </div>
         </div>
         <div>
-          {/* <span>Tasks:</span> */}
           <div className="tasks-container">
             {tasks.map((item, idx) => {
               return (
