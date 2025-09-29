@@ -5,16 +5,24 @@ function FocusMode() {
   const [breakTime, setBreakTime] = useState(0);
 
   const [mode, setMode] = useState(null);
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
 
   const handleStart = () => {
     setIsRunning(true);
   };
 
-  const handleEnd = () => {
+  const handleFinish = () => {
+    setTimeLeft(breakTime);
+  };
+
+  const handleStop = () => {
     setIsRunning(false);
   };
+
+  useEffect(() => {
+    console.log(timeLeft);
+  });
 
   useEffect(() => {
     if (!isRunning) {
@@ -24,7 +32,7 @@ function FocusMode() {
     const interval = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          handleEnd();
+          handleStop();
           return 0;
         }
         return prev - 1;
@@ -44,9 +52,9 @@ function FocusMode() {
       </div>
       <div className="focusMode-pomodoro-timer">
         <div className="focusMode-pomodoro-btns">
-          <button>Start</button>
-          <button>Stop</button>
-          <button>Reset</button>
+          <button onClick={handleStart}>Start</button>
+          <button onClick={handleStop}>Pause</button>
+          <button onClick={handleStop}>Reset</button>
           <input type="text" placeholder="Set work time in minutes" />
           <input type="text" placeholder="Set break time in minutes" />
         </div>
