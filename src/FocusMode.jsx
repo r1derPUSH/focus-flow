@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function FocusMode() {
   const [workTime, setWorkTime] = useState(0);
@@ -7,6 +7,26 @@ function FocusMode() {
   const [mode, setMode] = useState(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+
+  const handleEnd = () => {
+    setIsRunning(false);
+  };
+
+  useEffect(() => {
+    if (!isRunning) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          handleEnd();
+          return 0;
+        }
+        return prev - 1;
+      });
+    });
+  }, [isRunning]);
 
   return (
     <>
