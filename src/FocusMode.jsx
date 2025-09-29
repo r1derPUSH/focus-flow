@@ -8,6 +8,8 @@ function FocusMode() {
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
   const [isTimeOfWorkAndBreak, setIsTimeOfWorkAndBreak] = useState(false);
+  const [minutes, setMinutes] = useState(null);
+  const [seconds, setSeconds] = useState(null);
 
   const handleWorkTimeChange = (e) => {
     setWorkTime(e.target.value);
@@ -18,7 +20,7 @@ function FocusMode() {
   };
 
   const handleFinish = () => {
-    setTimeLeft(breakTime);
+    setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
   };
 
   const handleStop = () => {
@@ -33,7 +35,7 @@ function FocusMode() {
 
   function formatTime(val) {
     const minutes = Math.floor(val / 60);
-    const seconds = val % 60;
+    const seconds = (val * 60) % 60;
 
     return `${minutes}:${seconds}`;
   }
@@ -48,6 +50,8 @@ function FocusMode() {
     }
 
     const interval = setInterval(() => {
+      setMinutes(workTime);
+      setSeconds(workTime);
       setTimeLeft((prev) => {
         if (prev <= 1) {
           handleStop();
@@ -77,7 +81,7 @@ function FocusMode() {
           >
             <button onClick={handleStart}>Start</button>
             <button onClick={handleStop}>Pause</button>
-            <button onClick={handleStop}>Reset</button>
+            <button onClick={handleFinish}>Reset</button>
           </div>
           <div
             className={
@@ -94,7 +98,7 @@ function FocusMode() {
             <button onClick={setWorkAndBreakTime}>Set Time</button>
           </div>
         </div>
-        <div className="focusMode-timer-span">{formatTime()}</div>
+        <div className="focusMode-timer-span">{formatTime(minutes)}</div>
       </div>
       <div className="focusMode-tips">
         <span>
