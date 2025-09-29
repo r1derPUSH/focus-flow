@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import FocusMode from "./FocusMode";
 
 function ProgressBar({ totalTasks, completedTasks, isFocusMode }) {
-  const [workTime, setWorkTime] = useState(0);
-  const [breakTime, setBreakTime] = useState(0);
-
   return (
     <section
       className={

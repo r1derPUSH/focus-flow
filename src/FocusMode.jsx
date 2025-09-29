@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function FocusMode() {
+  const [workTime, setWorkTime] = useState(0);
+  const [breakTime, setBreakTime] = useState(0);
+
+  const [mode, setMode] = useState(null);
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
   return (
     <>
       <div className="focusMode-task-container">
@@ -12,6 +19,8 @@ function FocusMode() {
       <div className="focusMode-pomodoro-timer">
         <div className="focusMode-pomodoro-btns">
           <button>Start</button>
+          <button>Stop</button>
+          <button>Reset</button>
           <input type="text" placeholder="Set work time in minutes" />
           <input type="text" placeholder="Set break time in minutes" />
         </div>
