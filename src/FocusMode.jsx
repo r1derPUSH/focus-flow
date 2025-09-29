@@ -8,6 +8,10 @@ function FocusMode() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
+  const handleStart = () => {
+    setIsRunning(true);
+  };
+
   const handleEnd = () => {
     setIsRunning(false);
   };
@@ -25,7 +29,9 @@ function FocusMode() {
         }
         return prev - 1;
       });
-    });
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, [isRunning]);
 
   return (
