@@ -26,10 +26,17 @@ function FocusMode() {
   };
 
   const setWorkAndBreakTime = () => {
-    setTimeLeft(workTime);
+    setTimeLeft(workTime * 60);
     setIsTimeOfWorkAndBreak(true);
     setWorkTime("");
   };
+
+  function formatTime(val) {
+    const minutes = Math.floor(val / 60);
+    const seconds = val % 60;
+
+    return `${minutes}:${seconds}`;
+  }
 
   useEffect(() => {
     console.log(timeLeft);
@@ -72,16 +79,22 @@ function FocusMode() {
             <button onClick={handleStop}>Pause</button>
             <button onClick={handleStop}>Reset</button>
           </div>
-          <input
-            value={workTime}
-            onChange={handleWorkTimeChange}
-            type="number"
-            placeholder="Set work time in minutes"
-          />
-          <input type="text" placeholder="Set break time in minutes" />
-          <button onClick={setWorkAndBreakTime}>Set Time</button>
+          <div
+            className={
+              !isTimeOfWorkAndBreak ? "inputs-showing" : "inputs-notShowing"
+            }
+          >
+            <input
+              value={workTime}
+              onChange={handleWorkTimeChange}
+              type="number"
+              placeholder="Set work time in minutes"
+            />
+            <input type="text" placeholder="Set break time in minutes" />
+            <button onClick={setWorkAndBreakTime}>Set Time</button>
+          </div>
         </div>
-        <div className="focusMode-timer-span">00:00</div>
+        <div className="focusMode-timer-span">{formatTime()}</div>
       </div>
       <div className="focusMode-tips">
         <span>

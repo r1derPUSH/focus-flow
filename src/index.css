@@ -305,6 +305,14 @@ body {
   display: none;
 }
 
+.inputs-showing {
+  display: flex;
+}
+
+.inputs-notShowing {
+  display: none;
+}
+
 /* Endpoint of Focus Mode */
 
 .progress-bar-section {
