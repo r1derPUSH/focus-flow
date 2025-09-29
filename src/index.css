@@ -297,6 +297,14 @@ body {
   margin-bottom: 5vh;
 }
 
+.btns-showing {
+  display: flex;
+}
+
+.btns-notShowing {
+  display: none;
+}
+
 /* Endpoint of Focus Mode */
 
 .progress-bar-section {

@@ -7,6 +7,11 @@ function FocusMode() {
   const [mode, setMode] = useState(null);
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
+  const [isTimeOfWorkAndBreak, setIsTimeOfWorkAndBreak] = useState(false);
+
+  const handleWorkTimeChange = (e) => {
+    setWorkTime(e.target.value);
+  };
 
   const handleStart = () => {
     setIsRunning(true);
@@ -18,6 +23,12 @@ function FocusMode() {
 
   const handleStop = () => {
     setIsRunning(false);
+  };
+
+  const setWorkAndBreakTime = () => {
+    setTimeLeft(workTime);
+    setIsTimeOfWorkAndBreak(true);
+    setWorkTime("");
   };
 
   useEffect(() => {
@@ -52,11 +63,23 @@ function FocusMode() {
       </div>
       <div className="focusMode-pomodoro-timer">
         <div className="focusMode-pomodoro-btns">
-          <button onClick={handleStart}>Start</button>
-          <button onClick={handleStop}>Pause</button>
-          <button onClick={handleStop}>Reset</button>
-          <input type="text" placeholder="Set work time in minutes" />
+          <div
+            className={
+              isTimeOfWorkAndBreak ? "btns-showing" : "btns-notShowing"
+            }
+          >
+            <button onClick={handleStart}>Start</button>
+            <button onClick={handleStop}>Pause</button>
+            <button onClick={handleStop}>Reset</button>
+          </div>
+          <input
+            value={workTime}
+            onChange={handleWorkTimeChange}
+            type="number"
+            placeholder="Set work time in minutes"
+          />
           <input type="text" placeholder="Set break time in minutes" />
+          <button onClick={setWorkAndBreakTime}>Set Time</button>
         </div>
         <div className="focusMode-timer-span">00:00</div>
       </div>
