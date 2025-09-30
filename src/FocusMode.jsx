@@ -32,6 +32,13 @@ function FocusMode() {
     setTimeLeft(workTime * 60);
   };
 
+  function formatTime(str) {
+    if (str >= 10) {
+      return str;
+    }
+    return `0${str}`;
+  }
+
   // function formatTime(val) {
   //   const minutes = Math.floor(val / 60);
   //   const seconds = (val * 60) % 60;
@@ -40,7 +47,7 @@ function FocusMode() {
   // }
 
   useEffect(() => {
-    console.log(`Work time: ${workTime}`);
+    // console.log(`Work time: ${workTime}`);
     console.log(timeLeft);
     console.log(minutes);
     console.log(seconds);
@@ -108,7 +115,7 @@ function FocusMode() {
           </div>
         </div>
         <div className="focusMode-timer-span">
-          {minutes}:{seconds}
+          {formatTime(minutes)}:{formatTime(seconds)}
         </div>
       </div>
       <div className="focusMode-tips">
