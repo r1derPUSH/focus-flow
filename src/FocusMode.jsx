@@ -1,10 +1,11 @@
+import { span } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
 function FocusMode() {
-  const [workTime, setWorkTime] = useState(0);
+  const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState(0);
 
-  const [mode, setMode] = useState(null);
+  const [mode, setMode] = useState("");
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
   const [isTimeOfWorkAndBreak, setIsTimeOfWorkAndBreak] = useState(false);
@@ -17,12 +18,14 @@ function FocusMode() {
 
   const handleStart = () => {
     setIsRunning(true);
+    setMode("focus");
   };
 
   const handleFinish = () => {
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
     setIsRunning(false);
     setTimeLeft(0);
+    setMode("");
   };
 
   const handleStop = () => {
@@ -117,7 +120,13 @@ function FocusMode() {
           </div>
         </div>
         <div className="focusMode-timer-span">
-          {formatTime(minutes)}:{formatTime(seconds)}
+          {mode === "focus" ? (
+            <span>
+              Focus: {formatTime(minutes)}:{formatTime(seconds)}{" "}
+            </span>
+          ) : (
+            <span>{mode} 00:00</span>
+          )}
         </div>
       </div>
       <div className="focusMode-tips">
