@@ -21,6 +21,8 @@ function FocusMode() {
 
   const handleFinish = () => {
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
+    setIsRunning(false);
+    setTimeLeft(0);
   };
 
   const handleStop = () => {
