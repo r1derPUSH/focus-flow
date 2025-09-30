@@ -28,21 +28,30 @@ function FocusMode() {
   };
 
   const setWorkAndBreakTime = () => {
-    setTimeLeft(workTime * 60);
     setIsTimeOfWorkAndBreak(true);
-    setWorkTime("");
+    setTimeLeft(workTime * 60);
   };
 
-  function formatTime(val) {
-    const minutes = Math.floor(val / 60);
-    const seconds = (val * 60) % 60;
+  // function formatTime(val) {
+  //   const minutes = Math.floor(val / 60);
+  //   const seconds = (val * 60) % 60;
 
-    return `${minutes}:${seconds}`;
-  }
+  //   return `${minutes}:${seconds}`;
+  // }
 
   useEffect(() => {
+    console.log(`Work time: ${workTime}`);
     console.log(timeLeft);
+    console.log(minutes);
+    console.log(seconds);
   });
+
+  useEffect(() => {
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    setMinutes(mins);
+    setSeconds(secs);
+  }, [timeLeft]);
 
   useEffect(() => {
     if (!isRunning) {
@@ -50,8 +59,8 @@ function FocusMode() {
     }
 
     const interval = setInterval(() => {
-      setMinutes(workTime);
-      setSeconds(workTime);
+      // if (workTime != 0) {
+      // }
       setTimeLeft((prev) => {
         if (prev <= 1) {
           handleStop();
@@ -98,7 +107,9 @@ function FocusMode() {
             <button onClick={setWorkAndBreakTime}>Set Time</button>
           </div>
         </div>
-        <div className="focusMode-timer-span">{formatTime(minutes)}</div>
+        <div className="focusMode-timer-span">
+          {minutes}:{seconds}
+        </div>
       </div>
       <div className="focusMode-tips">
         <span>
