@@ -8,6 +8,7 @@ function UserTask({
   completedTasks,
   setIsFocusMode,
   isFocusMode,
+  setCurrentTask,
 }) {
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
@@ -20,6 +21,7 @@ function UserTask({
 
   const handleFocus = () => {
     setIsFocusMode(true);
+    setCurrentTask(task);
   };
 
   const handleFinish = () => {

@@ -7,15 +7,18 @@ function MainSection({ name, surname }) {
   const [totalTasks, setTotalTasks] = useState(0);
   const [completedTasks, setCompletedTasks] = useState(0);
   const [isFocusMode, setIsFocusMode] = useState(false);
+  const [currentTask, setCurrentTask] = useState("");
   return (
     <>
       <Greeting name={name} surname={surname} />
       <ProgressBar
+        currentTask={currentTask}
         isFocusMode={isFocusMode}
         totalTasks={totalTasks}
         completedTasks={completedTasks}
       />
       <DailyTasks
+        setCurrentTask={setCurrentTask}
         isFocusMode={isFocusMode}
         setIsFocusMode={setIsFocusMode}
         setTotalTasks={setTotalTasks}

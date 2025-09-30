@@ -1,7 +1,7 @@
 import { span } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
-function FocusMode() {
+function FocusMode({ currentTask }) {
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState(0);
 
@@ -88,7 +88,7 @@ function FocusMode() {
   return (
     <>
       <div className="focusMode-task-container">
-        <span className="focusMode-task-name">Task 123</span>
+        <span className="focusMode-task-name">{currentTask}</span>
         <span className="focusMode-task-description">
           Lorem ipsum dolor sit amet consectetur adipisicing.
         </span>
