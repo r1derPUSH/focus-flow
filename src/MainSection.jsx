@@ -8,6 +8,7 @@ function MainSection({ name, surname }) {
   const [completedTasks, setCompletedTasks] = useState(0);
   const [isFocusMode, setIsFocusMode] = useState(false);
   const [currentTask, setCurrentTask] = useState("");
+  const [currentDescription, setCurrentDescription] = useState("");
   return (
     <>
       <Greeting name={name} surname={surname} />
@@ -18,6 +19,8 @@ function MainSection({ name, surname }) {
         completedTasks={completedTasks}
       />
       <DailyTasks
+        currentTask={currentTask}
+        setCurrentDescription={setCurrentDescription}
         setCurrentTask={setCurrentTask}
         isFocusMode={isFocusMode}
         setIsFocusMode={setIsFocusMode}

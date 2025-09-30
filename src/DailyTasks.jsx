@@ -10,6 +10,8 @@ function DailyTasks({
   setIsFocusMode,
   isFocusMode,
   setCurrentTask,
+  setCurrentDescription,
+  currentTask,
 }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
@@ -32,11 +34,15 @@ function DailyTasks({
     localStorage.setItem("total-tasks", tasks.length);
     localStorage.setItem(
       "task-name",
-      JSON.stringify(tasks.filter((item) => item !== task))
+      JSON.stringify(tasks.filter((item) => item !== currentTask))
     );
     setTotalTasks(tasks.length);
   }
   console.log(tasks);
+  console.log(`This is desctipion: ${descs}`);
+
+  // const descriptions
+
   return (
     <>
       <div
@@ -71,6 +77,7 @@ function DailyTasks({
             {tasks.map((item, idx) => {
               return (
                 <UserTask
+                  setCurrentDescription={setCurrentDescription}
                   setCurrentTask={setCurrentTask}
                   isFocusMode={isFocusMode}
                   setIsFocusMode={setIsFocusMode}
@@ -79,7 +86,9 @@ function DailyTasks({
                   key={idx}
                   task={item}
                   setTasks={setTasks}
+                  setDescs={setDescs}
                   tasks={tasks}
+                  descs={descs}
                 />
               );
             })}

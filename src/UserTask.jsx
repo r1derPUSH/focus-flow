@@ -3,7 +3,9 @@ import { useState } from "react";
 function UserTask({
   task,
   tasks,
+  descs,
   setTasks,
+  setDescs,
   setCompletedTasks,
   completedTasks,
   setIsFocusMode,
@@ -17,6 +19,7 @@ function UserTask({
       "task-name",
       JSON.stringify(tasks.filter((item) => item !== task))
     );
+    setDescs();
   };
 
   const handleFocus = () => {
