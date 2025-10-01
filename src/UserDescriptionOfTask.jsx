@@ -5,7 +5,9 @@ function UserDescriptionOfTask({
   isVisible,
   setIsVisible,
   setTasks,
+  tasks,
   setDescs,
+  descs,
 }) {
   const [taskValue, setTaskValue] = useState("");
   const [task, setTask] = useState([]);
@@ -17,12 +19,25 @@ function UserDescriptionOfTask({
   }
 
   async function handleCreate() {
-    const tasks = [...task, taskValue];
-    const descs = [...desc, descValue];
-    setTask(tasks);
-    setDesc(descs);
-    setTasks((prev) => [...prev, taskValue]);
-    setDescs((prev) => [...prev, descValue]);
+    const t = [...task, taskValue];
+    const d = [...desc, descValue];
+    setTask(t);
+    setDesc(d);
+
+    /* if */
+    if (!tasks || tasks.length === 0) {
+      setTasks([taskValue]);
+    }
+    if (tasks.length > 0) {
+      setTasks((prev) => [...prev, taskValue]);
+    }
+    if (!descs || descs.length === 0) {
+      setDescs([descValue]);
+    }
+    if (descs.length > 0) {
+      setDescs((prev) => [...prev, descValue]);
+    }
+    /* endpoint of if */
     localStorage.setItem(
       "task-name",
       JSON.stringify([

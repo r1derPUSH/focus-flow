@@ -19,7 +19,6 @@ function UserTask({
       "task-name",
       JSON.stringify(tasks.filter((item) => item !== task))
     );
-    setDescs();
   };
 
   const handleFocus = () => {

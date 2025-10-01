@@ -57,7 +57,9 @@ function DailyTasks({
               <UserDescriptionOfTask
                 completedTasks={completedTasks}
                 setTasks={setTasks}
+                tasks={tasks}
                 setDescs={setDescs}
+                descs={descs}
                 setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}
