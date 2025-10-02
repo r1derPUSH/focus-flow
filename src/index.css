@@ -762,6 +762,122 @@ body {
   word-wrap: break-word;
 }
 
+.focusMode-pomodoro-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 20px;
+}
+
+/* Блок кнопок Start/Pause/Reset */
+.btns-showing,
+.inputs-showing {
+  display: flex;
+  gap: 15px;
+  transition: all 0.4s ease;
+}
+
+.btns-notShowing,
+.inputs-notShowing {
+  display: none;
+}
+
+/* Стиль кнопок загальний */
+.focusMode-pomodoro-btns button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  background-color: #2a2a2a; /* темний базовий фон */
+}
+
+/* Hover ефект */
+.focusMode-pomodoro-btns button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Start button */
+.focusMode-pomodoro-btns button.start {
+  background: linear-gradient(145deg, #4cafef, #1f8cff);
+}
+
+.focusMode-pomodoro-btns button.start:hover {
+  background: linear-gradient(145deg, #5ec6ff, #3399ff);
+}
+
+/* Pause button */
+.focusMode-pomodoro-btns button.pause {
+  background: linear-gradient(145deg, #6c6c6c, #4f4f4f);
+}
+
+.focusMode-pomodoro-btns button.pause:hover {
+  background: linear-gradient(145deg, #7d7d7d, #5f5f5f);
+}
+
+/* Reset button */
+.focusMode-pomodoro-btns button.reset {
+  background: linear-gradient(145deg, #ff6b6b, #e94e4e);
+}
+
+.focusMode-pomodoro-btns button.reset:hover {
+  background: linear-gradient(145deg, #ff7b7b, #f05454);
+}
+
+/* Стиль інпутів */
+.focusMode-pomodoro-btns input {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  width: 180px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.focusMode-pomodoro-btns input:focus {
+  outline: none;
+  border-color: #4cafef;
+  box-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 500px) {
+  .btns-showing,
+  .inputs-showing {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .focusMode-pomodoro-btns input,
+  .focusMode-pomodoro-btns button {
+    width: 140px;
+  }
+}
+
+/* Мобільна адаптація */
+@media (max-width: 500px) {
+  .btns-showing,
+  .inputs-showing {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .focusMode-pomodoro-btns input,
+  .focusMode-pomodoro-btns button {
+    width: 140px;
+  }
+}
+
 @media (max-width: 480px) {
   .avatar-login {
     width: 30vw;
