@@ -19,24 +19,19 @@ function UserDescriptionOfTask({
   }
 
   async function handleCreate() {
-    const t = [...task, taskValue];
-    const d = [...desc, descValue];
-    setTask(t);
-    setDesc(d);
+    setTasks((prev) => {
+      const data = [...prev, taskValue];
+      localStorage.setItem("task-name", JSON.stringify(data));
+      return data;
+    });
+    setDescs((prev) => {
+      const data = [...prev, descValue];
+      localStorage.setItem("task-description", JSON.stringify(data));
+      return data;
+    });
 
     /* if */
-    if (!tasks || tasks.length === 0) {
-      setTasks([taskValue]);
-    }
-    if (tasks.length > 0) {
-      setTasks((prev) => [...prev, taskValue]);
-    }
-    if (!descs || descs.length === 0) {
-      setDescs([descValue]);
-    }
-    if (descs.length > 0) {
-      setDescs((prev) => [...prev, descValue]);
-    }
+
     /* endpoint of if */
     localStorage.setItem(
       "task-name",

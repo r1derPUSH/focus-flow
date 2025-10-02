@@ -19,6 +19,13 @@ function UserTask({
       "task-name",
       JSON.stringify(tasks.filter((item) => item !== task))
     );
+    setDescs(descs.filter((item) => item !== localStorage.getItem(task)));
+    localStorage.setItem(
+      "task-description",
+      JSON.stringify(
+        descs.filter((item) => item !== localStorage.getItem(task))
+      )
+    );
   };
 
   const handleFocus = () => {

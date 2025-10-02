@@ -130,10 +130,13 @@ function FocusMode({ currentTask }) {
         </div>
       </div>
       <div className="focusMode-tips">
+        <span>Single-task: Focus on one task at a time.</span>
+        <span>Set a timer: Work in 25–50 min sessions with short breaks.</span>
         <span>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut ea
-          placeat, laudantium dolor omnis similique.
+          Clear distractions: Silence notifications and close unnecessary tabs.
         </span>
+        <span>Mini goals: Break tasks into small, achievable steps.</span>
+        <span>Move often: Take short stretches or walks during breaks.</span>
       </div>
     </>
   );
