@@ -12,6 +12,9 @@ function UserTask({
   isFocusMode,
   setCurrentTask,
 }) {
+  // if (tasks.length == 0) {
+  //   //
+  // }
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
     setTasks(tasks.filter((item) => item !== task));
