@@ -90,7 +90,7 @@ function FocusMode({ currentTask }) {
       <div className="focusMode-task-container">
         <span className="focusMode-task-name">{currentTask}</span>
         <span className="focusMode-task-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing.
+          {localStorage.getItem(currentTask)}
         </span>
       </div>
       <div className="focusMode-pomodoro-timer">
