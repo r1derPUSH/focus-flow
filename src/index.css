@@ -792,52 +792,66 @@ body {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  color: #ffffff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   transition: all 0.3s ease;
-  background-color: #2a2a2a; /* темний базовий фон */
 }
 
-/* Hover ефект */
-.focusMode-pomodoro-btns button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+.set-time-focusMode {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #f0f0f0;
+  background: linear-gradient(145deg, #2a5c2a, #3a7a3a); /* темно-зелений */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
-/* Start button */
-.focusMode-pomodoro-btns button.start {
-  background: linear-gradient(145deg, #4cafef, #1f8cff);
+.set-time-focusMode:hover {
+  background: linear-gradient(145deg, #3a7a3a, #4a9a4a);
+  transform: translateY(-2px) scale(1.03);
 }
 
-.focusMode-pomodoro-btns button.start:hover {
-  background: linear-gradient(145deg, #5ec6ff, #3399ff);
+/* Start button — синій темний */
+.start-btn-focusMode {
+  background: linear-gradient(145deg, #1f3c6e, #3359a4);
 }
 
-/* Pause button */
-.focusMode-pomodoro-btns button.pause {
-  background: linear-gradient(145deg, #6c6c6c, #4f4f4f);
+.start-btn-focusMode:hover {
+  background: linear-gradient(145deg, #2a4b8c, #4a6bbd);
+  transform: translateY(-2px) scale(1.03);
 }
 
-.focusMode-pomodoro-btns button.pause:hover {
-  background: linear-gradient(145deg, #7d7d7d, #5f5f5f);
+/* Pause button — нейтральний темний */
+.pause-btn-focusMode {
+  background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
 }
 
-/* Reset button */
-.focusMode-pomodoro-btns button.reset {
-  background: linear-gradient(145deg, #ff6b6b, #e94e4e);
+.pause-btn-focusMode:hover {
+  background: linear-gradient(145deg, #3a3a3a, #4a4a4a);
+  transform: translateY(-2px) scale(1.02);
 }
 
-.focusMode-pomodoro-btns button.reset:hover {
-  background: linear-gradient(145deg, #ff7b7b, #f05454);
+/* Reset button — теплий темний червоний */
+.reset-btn-focusMode {
+  background: linear-gradient(145deg, #5c1a1a, #842222);
 }
 
-/* Стиль інпутів */
+.reset-btn-focusMode:hover {
+  background: linear-gradient(145deg, #6e2222, #a12b2b);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Стиль інпутів — темні з легким акцентом при фокусі */
 .focusMode-pomodoro-btns input {
   padding: 10px 14px;
   border-radius: 12px;
   border: 1px solid #444;
   background-color: #1f1f1f;
-  color: #ffffff;
+  color: #e0e0e0;
   font-size: 16px;
   text-align: center;
   width: 180px;
@@ -848,34 +862,6 @@ body {
   outline: none;
   border-color: #4cafef;
   box-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
-}
-
-/* Мобільна адаптація */
-@media (max-width: 500px) {
-  .btns-showing,
-  .inputs-showing {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .focusMode-pomodoro-btns input,
-  .focusMode-pomodoro-btns button {
-    width: 140px;
-  }
-}
-
-/* Мобільна адаптація */
-@media (max-width: 500px) {
-  .btns-showing,
-  .inputs-showing {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .focusMode-pomodoro-btns input,
-  .focusMode-pomodoro-btns button {
-    width: 140px;
-  }
 }
 
 @media (max-width: 480px) {

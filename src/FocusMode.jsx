@@ -100,9 +100,15 @@ function FocusMode({ currentTask }) {
               isTimeOfWorkAndBreak ? "btns-showing" : "btns-notShowing"
             }
           >
-            <button onClick={handleStart}>Start</button>
-            <button onClick={handleStop}>Pause</button>
-            <button onClick={handleFinish}>Reset</button>
+            <button className="start-btn-focusMode" onClick={handleStart}>
+              Start
+            </button>
+            <button className="pause-btn-focusMode" onClick={handleStop}>
+              Pause
+            </button>
+            <button className="reset-btn-focusMode" onClick={handleFinish}>
+              Reset
+            </button>
           </div>
           <div
             className={
@@ -110,13 +116,20 @@ function FocusMode({ currentTask }) {
             }
           >
             <input
+              min={0}
+              max={60}
               value={workTime}
               onChange={handleWorkTimeChange}
               type="number"
               placeholder="Set work time in minutes"
             />
             <input type="text" placeholder="Set break time in minutes" />
-            <button onClick={setWorkAndBreakTime}>Set Time</button>
+            <button
+              className="set-time-focusMode"
+              onClick={setWorkAndBreakTime}
+            >
+              Set Time
+            </button>
           </div>
         </div>
         <div className="focusMode-timer-span">
