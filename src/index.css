@@ -1011,6 +1011,43 @@ body {
   }
 }
 
+@media (max-width: 700px) {
+  .focusMode-pomodoro-timer {
+    height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin-top: 5vh; */
+    margin-bottom: 5vh;
+  }
+  .progress-bar-section-focusModeActivated {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #212121, #242424);
+    padding: 2rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    height: 50vh;
+    margin: 2rem auto;
+    animation: drawFromLeft 0.7s ease-out forwards;
+    transform-origin: left;
+  }
+  .timer {
+    display: inline-block;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5rem; /* великий і читабельний текст */
+    font-weight: 700;
+    color: #ffffff; /* білий текст */
+    background: #2c2c2c; /* темний фон */
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* легка тінь */
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+}
+
 @media (max-width: 1200px) {
   .taskAndDesc {
     display: flex;
