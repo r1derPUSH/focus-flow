@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import FocusMode from "./FocusMode";
 
-function ProgressBar({ totalTasks, completedTasks, isFocusMode, currentTask }) {
+function ProgressBar({
+  totalTasks,
+  completedTasks,
+  isFocusMode,
+  setIsFocusMode,
+  currentTask,
+}) {
   return (
     <section
       className={
@@ -13,7 +19,7 @@ function ProgressBar({ totalTasks, completedTasks, isFocusMode, currentTask }) {
       <div
         className={!isFocusMode ? "focusMode-box-disabled" : "focusMode-box"}
       >
-        <FocusMode currentTask={currentTask} />
+        <FocusMode currentTask={currentTask} setIsFocusMode={setIsFocusMode} />
       </div>
     </section>
   );

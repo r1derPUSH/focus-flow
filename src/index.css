@@ -287,6 +287,10 @@ body {
   flex-direction: column;
 }
 
+.focusMode-hide {
+  display: none;
+}
+
 .focusMode-timer-span {
   height: 100%;
 }
@@ -323,6 +327,15 @@ body {
   height: 100%;
 }
 
+.focusMode-tips {
+  display: flex;
+  flex-direction: column;
+}
+
+.focusMode-tips span {
+  margin-bottom: 2vh;
+}
+
 .btns-showing {
   display: flex;
   justify-content: space-around;
@@ -339,6 +352,11 @@ body {
 
 .inputs-notShowing {
   display: none;
+}
+
+.footerSection-focusMode {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Endpoint of Focus Mode */

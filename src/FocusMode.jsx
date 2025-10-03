@@ -1,11 +1,12 @@
 import { span } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
-function FocusMode({ currentTask }) {
+function FocusMode({ currentTask, setIsFocusMode }) {
   const [workTime, setWorkTime] = useState("");
-  const [breakTime, setBreakTime] = useState(0);
+  const [breakTime, setBreakTime] = useState("");
 
   const [mode, setMode] = useState("");
+  const [hide, setHide] = useState(false);
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
   const [isTimeOfWorkAndBreak, setIsTimeOfWorkAndBreak] = useState(false);
@@ -42,6 +43,12 @@ function FocusMode({ currentTask }) {
     setIsTimeOfWorkAndBreak(true);
     setTimeLeft(workTime * 60);
   };
+
+  const backToTasks = () => {
+    setIsFocusMode(false);
+  };
+
+  const finishTask = () => {};
 
   function formatTime(str) {
     if (str >= 10) {
@@ -159,14 +166,23 @@ function FocusMode({ currentTask }) {
           )}
         </div>
       </div>
-      <div className="focusMode-tips">
-        <span>Single-task: Focus on one task at a time.</span>
-        <span>Set a timer: Work in 25–50 min sessions with short breaks.</span>
-        <span>
-          Clear distractions: Silence notifications and close unnecessary tabs.
-        </span>
-        <span>Mini goals: Break tasks into small, achievable steps.</span>
-        <span>Move often: Take short stretches or walks during breaks.</span>
+      <div className="footerSection-focusMode">
+        <div className="focusMode-tips">
+          <span>Single-task: Focus on one task at a time.</span>
+          <span>
+            Set a timer: Work in 25–50 min sessions with short breaks.
+          </span>
+          <span>
+            Clear distractions: Silence notifications and close unnecessary
+            tabs.
+          </span>
+          <span>Mini goals: Break tasks into small, achievable steps.</span>
+          <span>Move often: Take short stretches or walks during breaks.</span>
+        </div>
+        <div className="finishTask-focusMode-section">
+          <button onClick={backToTasks}>Go Back</button>
+          <button onClick={finishTask}>Finish</button>
+        </div>
       </div>
     </>
   );

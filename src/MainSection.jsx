@@ -15,6 +15,7 @@ function MainSection({ name, surname }) {
       <ProgressBar
         currentTask={currentTask}
         isFocusMode={isFocusMode}
+        setIsFocusMode={setIsFocusMode}
         totalTasks={totalTasks}
         completedTasks={completedTasks}
       />
