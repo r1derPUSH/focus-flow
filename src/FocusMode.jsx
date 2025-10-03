@@ -180,8 +180,12 @@ function FocusMode({ currentTask, setIsFocusMode }) {
           <span>Move often: Take short stretches or walks during breaks.</span>
         </div>
         <div className="finishTask-focusMode-section">
-          <button onClick={backToTasks}>Go Back</button>
-          <button onClick={finishTask}>Finish</button>
+          <button className="backHome-focusMode-btn" onClick={backToTasks}>
+            Go Back
+          </button>
+          <button className="finishTask-focusMode-btn" onClick={finishTask}>
+            Finish
+          </button>
         </div>
       </div>
     </>
