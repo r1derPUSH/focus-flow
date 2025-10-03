@@ -16,6 +16,10 @@ function FocusMode({ currentTask }) {
     setWorkTime(e.target.value);
   };
 
+  const handleBreakTimeChange = (e) => {
+    setBreakTime(e.target.value);
+  };
+
   const handleStart = () => {
     setIsRunning(true);
     setMode("focus");
@@ -26,6 +30,8 @@ function FocusMode({ currentTask }) {
     setIsRunning(false);
     setTimeLeft(0);
     setMode("");
+    setWorkTime("");
+    setBreakTime("");
   };
 
   const handleStop = () => {
@@ -100,9 +106,13 @@ function FocusMode({ currentTask }) {
               isTimeOfWorkAndBreak ? "btns-showing" : "btns-notShowing"
             }
           >
-            <button className="start-btn-focusMode" onClick={handleStart}>
-              Start
-            </button>
+            {!isRunning ? (
+              <button className="start-btn-focusMode" onClick={handleStart}>
+                Start
+              </button>
+            ) : (
+              ""
+            )}
             <button className="pause-btn-focusMode" onClick={handleStop}>
               Pause
             </button>
@@ -121,9 +131,16 @@ function FocusMode({ currentTask }) {
               value={workTime}
               onChange={handleWorkTimeChange}
               type="number"
-              placeholder="Set work time in minutes"
+              placeholder="Work Time in Minutes"
             />
-            <input type="text" placeholder="Set break time in minutes" />
+            <input
+              min={0}
+              max={60}
+              value={breakTime}
+              onChange={handleBreakTimeChange}
+              type="number"
+              placeholder="Break Time in Minutes"
+            />
             <button
               className="set-time-focusMode"
               onClick={setWorkAndBreakTime}
@@ -134,11 +151,11 @@ function FocusMode({ currentTask }) {
         </div>
         <div className="focusMode-timer-span">
           {mode === "focus" ? (
-            <span>
+            <span className="timer">
               Focus: {formatTime(minutes)}:{formatTime(seconds)}{" "}
             </span>
           ) : (
-            <span>{mode} 00:00</span>
+            <span className="timer">{mode} 00:00</span>
           )}
         </div>
       </div>

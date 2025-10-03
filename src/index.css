@@ -287,16 +287,40 @@ body {
   flex-direction: column;
 }
 
+.focusMode-timer-span {
+  height: 100%;
+}
+
+.timer {
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem; /* великий і читабельний текст */
+  font-weight: 700;
+  color: #ffffff; /* білий текст */
+  background: #2c2c2c; /* темний фон */
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* легка тінь */
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
 .focusMode-task-name {
   font-size: 2.5rem;
   font-weight: bold;
 }
 
 .focusMode-pomodoro-timer {
+  height: 7vh;
   display: flex;
   justify-content: space-around;
-  margin-top: 5vh;
+  align-items: center;
+  /* margin-top: 5vh; */
   margin-bottom: 5vh;
+}
+
+.focusMode-pomodoro-btns button {
+  height: 100%;
 }
 
 .btns-showing {
