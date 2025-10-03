@@ -295,7 +295,7 @@ body {
 .focusMode-pomodoro-timer {
   display: flex;
   justify-content: space-around;
-  margin-top: 20vh;
+  margin-top: 5vh;
   margin-bottom: 5vh;
 }
 
@@ -354,7 +354,7 @@ body {
   border-radius: 14px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 90%;
-  height: 40vh;
+  height: 50vh;
   margin: 2rem auto;
   animation: drawFromLeft 0.7s ease-out forwards;
   transform-origin: left;
