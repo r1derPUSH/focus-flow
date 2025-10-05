@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import FocusMode from "./FocusMode";
 
 function ProgressBar({

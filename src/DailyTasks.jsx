@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import UserDescriptionOfTask from "./UserDescriptionOfTask";
 import UserTask from "./UserTask";
 
@@ -40,8 +40,6 @@ function DailyTasks({
   }
   console.log(tasks);
   console.log(`This is desctipion: ${descs}`);
-
-  // const descriptions
 
   return (
     <>

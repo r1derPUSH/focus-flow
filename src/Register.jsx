@@ -1,4 +1,3 @@
-import React from "react";
 import avatar from "./assets/man-avatar.jpg";
 import changeIcon from "./assets/icons8-change-50.png";
 import avatar2 from "./assets/woman-avatar.png";
