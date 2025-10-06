@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 function FocusMode({ currentTask, setIsFocusMode }) {
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
+  const [isBreakTime, setIsBreakTime] = useState(false);
 
   const [mode, setMode] = useState("");
   const [hide, setHide] = useState(false);
@@ -72,23 +73,32 @@ function FocusMode({ currentTask, setIsFocusMode }) {
   });
 
   useEffect(() => {
-    const mins = Math.floor(timeLeft / 60);
-    const secs = timeLeft % 60;
-    setMinutes(mins);
-    setSeconds(secs);
+    if (!isBreakTime) {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      setMinutes(mins);
+      setSeconds(secs);
+    }
+    if (isBreakTime) {
+      handleStart();
+      const mins = Math.floor(breakTime);
+      const secs = (breakTime * 60) % 60;
+      setMinutes(mins);
+      setSeconds(secs);
+    }
   }, [timeLeft]);
 
   useEffect(() => {
     if (!isRunning) {
       return;
     }
-
+    console.log(`should work`);
     const interval = setInterval(() => {
       // if (workTime != 0) {
       // }
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          handleStop();
+          setIsBreakTime(true);
           return 0;
         }
         return prev - 1;
@@ -97,6 +107,26 @@ function FocusMode({ currentTask, setIsFocusMode }) {
 
     return () => clearInterval(interval);
   }, [isRunning]);
+
+  useEffect(() => {
+    if (!isBreakTime) {
+      return;
+    }
+    console.log(`should work now`);
+    const interval = setInterval(() => {
+      setBreakTime((prev) => {
+        if (prev <= 1) {
+          handleStop();
+          setIsBreakTime(false);
+          return 0;
+        }
+        console.log(`timer for break working`);
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isBreakTime]);
 
   return (
     <>
