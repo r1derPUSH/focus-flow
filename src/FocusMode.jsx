@@ -44,9 +44,11 @@ function FocusMode({ currentTask, setIsFocusMode }) {
     setIsTimeOfWorkAndBreak(true);
     if (!isBreakTime) {
       setTimeLeft(workTime * 60);
+      setMode("focus");
     }
     if (isBreakTime) {
       setTimeLeft(breakTime * 60);
+      setMode("break");
     }
   };
 
@@ -86,9 +88,9 @@ function FocusMode({ currentTask, setIsFocusMode }) {
     }
     if (isBreakTime) {
       handleStart();
-      setWorkAndBreakTime();
-      const mins = Math.floor(breakTime);
-      const secs = (breakTime * 60) % 60;
+      // setWorkAndBreakTime();
+      const mins = Math.floor(timeLeft);
+      const secs = (timeLeft * 60) % 60;
       setMinutes(mins);
       setSeconds(secs);
     }
@@ -120,13 +122,12 @@ function FocusMode({ currentTask, setIsFocusMode }) {
     }
     console.log(`should work now`);
     const interval = setInterval(() => {
-      setBreakTime((prev) => {
+      setTimeLeft((prev) => {
         if (prev <= 1) {
           handleStop();
           setIsBreakTime(false);
           return 0;
         }
-        console.log(`timer for break working`);
         return prev - 1;
       });
     }, 1000);
@@ -195,10 +196,19 @@ function FocusMode({ currentTask, setIsFocusMode }) {
         <div className="focusMode-timer-span">
           {mode === "focus" ? (
             <span className="timer">
-              Focus: {formatTime(minutes)}:{formatTime(seconds)}{" "}
+              Focus: {formatTime(minutes)}:{formatTime(seconds)}
             </span>
           ) : (
-            <span className="timer">{mode} 00:00</span>
+            <></>
+          )}
+        </div>
+        <div className="focusMode-timer-break-span">
+          {mode === "break" ? (
+            <span className="break-timer">
+              Break: {formatTime(minutes)}:{formatTime(seconds)}
+            </span>
+          ) : (
+            <></>
           )}
         </div>
       </div>
