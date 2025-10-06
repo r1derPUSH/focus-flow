@@ -42,7 +42,12 @@ function FocusMode({ currentTask, setIsFocusMode }) {
 
   const setWorkAndBreakTime = () => {
     setIsTimeOfWorkAndBreak(true);
-    setTimeLeft(workTime * 60);
+    if (!isBreakTime) {
+      setTimeLeft(workTime * 60);
+    }
+    if (isBreakTime) {
+      setTimeLeft(breakTime * 60);
+    }
   };
 
   const backToTasks = () => {
@@ -81,6 +86,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
     }
     if (isBreakTime) {
       handleStart();
+      setWorkAndBreakTime();
       const mins = Math.floor(breakTime);
       const secs = (breakTime * 60) % 60;
       setMinutes(mins);
