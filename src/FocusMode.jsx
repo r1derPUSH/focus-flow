@@ -22,11 +22,13 @@ function FocusMode({ currentTask, setIsFocusMode }) {
   };
 
   const handleBreak = () => {
+    handleStart();
     setTimeLeft(breakTime * 60);
     setMode("Break :");
   };
 
   const handleFocus = () => {
+    handleStart();
     setTimeLeft(workTime * 60);
     setMode("Focus :");
   };
