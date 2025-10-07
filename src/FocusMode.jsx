@@ -5,7 +5,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("Focus :");
   const [hide, setHide] = useState(false);
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
@@ -23,16 +23,17 @@ function FocusMode({ currentTask, setIsFocusMode }) {
 
   const handleBreak = () => {
     setTimeLeft(breakTime * 60);
-    setMode("break");
+    setMode("Break :");
   };
 
   const handleFocus = () => {
     setTimeLeft(workTime * 60);
+    setMode("Focus :");
   };
 
   const handleStart = () => {
     setIsRunning(true);
-    setMode("focus");
+    // setMode("Focus");
   };
 
   const handleFinish = () => {
