@@ -54,6 +54,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
 
   const backToTasks = () => {
     setIsFocusMode(false);
+    setIsRunning(false);
   };
 
   const finishTask = () => {};
