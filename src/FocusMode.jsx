@@ -36,6 +36,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
   };
 
   const handleFinish = () => {
+    setMode("Focus :");
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
     setIsRunning(false);
     setTimeLeft(0);
@@ -57,7 +58,15 @@ function FocusMode({ currentTask, setIsFocusMode }) {
     setIsRunning(false);
   };
 
-  const finishTask = () => {};
+  const finishTask = () => {
+    setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
+    setIsRunning(false);
+    setTimeLeft(0);
+    setWorkTime("");
+    setBreakTime("");
+    setIsFocusMode(false);
+    localStorage.setItem("finished-tasks", currentTask);
+  };
 
   function formatTime(str) {
     if (str >= 10) {
