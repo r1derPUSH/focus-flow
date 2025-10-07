@@ -178,16 +178,18 @@ function FocusMode({ currentTask, setIsFocusMode }) {
       </div>
       <div className="footerSection-focusMode">
         <div className="focusMode-tips">
-          <span>Single-task: Focus on one task at a time.</span>
+          <span>🎯 Single-task: Focus on one task at a time.</span>
           <span>
-            Set a timer: Work in 25–50 min sessions with short breaks.
+            ⏱️ Set a timer: Work in 25–50 min sessions with short breaks.
           </span>
           <span>
-            Clear distractions: Silence notifications and close unnecessary
-            tabs.
+            💬 Use AI: Type your current task into ChatGPT or a neural tool to
+            get clarity or ideas.
           </span>
-          <span>Mini goals: Break tasks into small, achievable steps.</span>
-          <span>Move often: Take short stretches or walks during breaks.</span>
+          <span>✅ Mini goals: Break tasks into small, achievable steps.</span>
+          <span>
+            🚶 Move often: Take short stretches or walks during breaks.
+          </span>
         </div>
         <div className="finishTask-focusMode-section">
           <button className="backHome-focusMode-btn" onClick={backToTasks}>

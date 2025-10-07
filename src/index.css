@@ -330,10 +330,31 @@ body {
 .focusMode-tips {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 18px 24px;
+  border-radius: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #eaeaea;
+  font-size: 15.5px;
+  line-height: 1.6;
+  font-weight: 500;
+  box-shadow: 0 0 25px rgba(120, 90, 250, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .focusMode-tips span {
-  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.focusMode-tips span:hover {
+  transform: translateX(4px);
+  color: #c7b9ff;
 }
 
 .btns-showing {
