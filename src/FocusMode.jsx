@@ -172,13 +172,9 @@ function FocusMode({ currentTask, setIsFocusMode }) {
           </div>
         </div>
         <div className="focusMode-timer-span">
-          {mode === "focus" ? (
-            <span className="timer">
-              Focus: {formatTime(minutes)}:{formatTime(seconds)}{" "}
-            </span>
-          ) : (
-            <span className="timer">{mode} 00:00</span>
-          )}
+          <span className="timer">
+            {mode} {formatTime(minutes)}:{formatTime(seconds)}{" "}
+          </span>
         </div>
       </div>
       <div className="footerSection-focusMode">
