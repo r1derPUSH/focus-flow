@@ -854,6 +854,46 @@ body {
 
 /* test */
 
+.break-btn-focusMode,
+.focus-btn-focusMode {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Break button */
+.break-btn-focusMode {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+}
+
+.break-btn-focusMode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Focus button */
+.focus-btn-focusMode {
+  background: linear-gradient(135deg, #6a5af9, #836fff);
+  color: white;
+}
+
+.focus-btn-focusMode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(106, 90, 249, 0.4);
+}
+
+/* Optional: small click animation */
+.break-btn-focusMode:active,
+.focus-btn-focusMode:active {
+  transform: scale(0.97);
+}
+
 .focusMode-task-container {
   font-family: "Ubuntu", sans-serif;
   display: flex;

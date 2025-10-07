@@ -33,14 +33,12 @@ function FocusMode({ currentTask, setIsFocusMode }) {
 
   const handleStart = () => {
     setIsRunning(true);
-    // setMode("Focus");
   };
 
   const handleFinish = () => {
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
     setIsRunning(false);
     setTimeLeft(0);
-    setMode("");
     setWorkTime("");
     setBreakTime("");
   };
@@ -136,10 +134,10 @@ function FocusMode({ currentTask, setIsFocusMode }) {
             <button className="reset-btn-focusMode" onClick={handleFinish}>
               Reset
             </button>
-            <button onClick={handleBreak} className="pause-btn-focusMode">
+            <button onClick={handleBreak} className="break-btn-focusMode">
               Break
             </button>
-            <button onClick={handleFocus} className="pause-btn-focusMode">
+            <button onClick={handleFocus} className="focus-btn-focusMode">
               Focus
             </button>
           </div>
@@ -174,7 +172,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
         </div>
         <div className="focusMode-timer-span">
           <span className="timer">
-            {mode} {formatTime(minutes)}:{formatTime(seconds)}{" "}
+            {mode} {formatTime(minutes)}:{formatTime(seconds)}
           </span>
         </div>
       </div>
