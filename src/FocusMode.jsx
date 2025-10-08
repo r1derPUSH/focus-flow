@@ -1,7 +1,7 @@
 import { span } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
-function FocusMode({ currentTask, setIsFocusMode }) {
+function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
@@ -38,6 +38,7 @@ function FocusMode({ currentTask, setIsFocusMode }) {
   };
 
   const handleFinish = () => {
+    setTasks(tasks.filter((item) => item != currentTask));
     setMode("Focus :");
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
     setIsRunning(false);

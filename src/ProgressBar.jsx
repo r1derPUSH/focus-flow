@@ -7,6 +7,8 @@ function ProgressBar({
   isFocusMode,
   setIsFocusMode,
   currentTask,
+  tasks,
+  setTasks,
 }) {
   return (
     <section
@@ -19,7 +21,12 @@ function ProgressBar({
       <div
         className={!isFocusMode ? "focusMode-box-disabled" : "focusMode-box"}
       >
-        <FocusMode currentTask={currentTask} setIsFocusMode={setIsFocusMode} />
+        <FocusMode
+          setTasks={setTasks}
+          tasks={tasks}
+          currentTask={currentTask}
+          setIsFocusMode={setIsFocusMode}
+        />
       </div>
     </section>
   );

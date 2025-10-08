@@ -12,21 +12,23 @@ function DailyTasks({
   setCurrentTask,
   setCurrentDescription,
   currentTask,
-  allTasks,
+  tasks,
+  setTasks,
 }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(
     localStorage.getItem("task-descripton")
   );
   const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState(() => {
-    const arr = localStorageTasksArr ? localStorageTasksArr : [];
-    return arr;
-  });
   const [descs, setDescs] = useState(() => {
     const arr = localStorageDescsArr ? localStorageDescsArr : [];
     return arr;
   });
+
+  // setTasks(() => {
+  //   const arr = localStorageTasksArr ? localStorageTasksArr : [];
+  //   return arr;
+  // });
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
 
