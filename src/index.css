@@ -490,6 +490,52 @@ body {
   margin: 2rem auto;
 }
 
+/* Typewriter */
+
+.focusMode-center-quote {
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #eaeaea;
+  text-align: center;
+  width: 80%;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  /* border-right: 2px solid #58c4dc; */
+  animation: typing 4s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+/* @keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+} */
+
+/* in case if unactivated -> */
+.focusMode-center-quote-activated {
+  display: none;
+}
+
+/* Endpoint of typewriter */
+
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;

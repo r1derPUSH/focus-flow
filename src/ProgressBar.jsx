@@ -19,6 +19,15 @@ function ProgressBar({
       }
     >
       <div
+        className={
+          !isFocusMode
+            ? "focusMode-center-quote"
+            : "focusMode-center-quote-activated"
+        }
+      >
+        <span className="typewriter">Focus. Flow. Grow.</span>
+      </div>
+      <div
         className={!isFocusMode ? "focusMode-box-disabled" : "focusMode-box"}
       >
         <FocusMode
