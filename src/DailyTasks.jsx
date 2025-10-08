@@ -12,6 +12,7 @@ function DailyTasks({
   setCurrentTask,
   setCurrentDescription,
   currentTask,
+  allTasks,
 }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
   const localStorageDescsArr = JSON.parse(

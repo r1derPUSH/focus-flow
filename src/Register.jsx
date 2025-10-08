@@ -21,10 +21,10 @@ const Register = () => {
   let kindOfAvatar = "man";
 
   if (img == avatar) {
-    kindOfAvatar = "woman";
+    kindOfAvatar = "man";
   } else if (img == avatar2) {
     console.log("woman worked out");
-    kindOfAvatar = "man";
+    kindOfAvatar = "woman";
   }
 
   const handleImgChange = () => {
