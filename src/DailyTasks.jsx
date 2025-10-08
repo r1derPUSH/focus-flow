@@ -25,10 +25,6 @@ function DailyTasks({
     return arr;
   });
 
-  // setTasks(() => {
-  //   const arr = localStorageTasksArr ? localStorageTasksArr : [];
-  //   return arr;
-  // });
   const [isUserDescriptionVisible, setIsUserDescriptionVisible] =
     useState(false);
 
