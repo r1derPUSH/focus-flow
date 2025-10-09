@@ -191,12 +191,14 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                     type="number"
                     placeholder="Break Time in Minutes"
                   />
-                  <button
-                    className="set-time-focusMode"
-                    onClick={setWorkAndBreakTime}
-                  >
-                    Set Time
-                  </button>
+                  <div className="flex-setTime-btn">
+                    <button
+                      className="set-time-focusMode"
+                      onClick={setWorkAndBreakTime}
+                    >
+                      Set Time
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

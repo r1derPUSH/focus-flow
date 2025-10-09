@@ -1154,15 +1154,23 @@ body {
     margin-left: 5vw;
   }
   .flex-flexes {
-    /* justify-content: ce; */
+    flex-direction: column;
   }
   .inputs-showing {
     /* width: 50vw; */
     flex-direction: column;
-    margin-left: 10vw;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: vw; */
+    margin-right: 10vw;
   }
   .inputs-showing input {
-    width: 100%;
+    width: 65vw;
+  }
+  .flex-setTime-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .footerSection-focusMode {
     width: 50%;
@@ -1175,7 +1183,7 @@ body {
   }
 
   .focusMode-pomodoro-btns button {
-    width: 50vw;
+    width: 70vw;
     height: 5vh;
     font-size: 0.8rem;
     text-align: center;
