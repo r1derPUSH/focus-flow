@@ -1143,29 +1143,40 @@ body {
   }
 }
 
-@media (max-width: 700px) {
-  .focusMode-tips {
+@media (max-width: 1100px) {
+  /* .centerFlex {
     display: flex;
+    justify-content: center;
+    align-items: center; */
+  /* }   */
+  .flex-focus-1 {
+    margin-top: 5vh;
+    margin-left: 5vw;
+  }
+  .flex-flexes {
+    /* justify-content: ce; */
+  }
+  .inputs-showing {
+    /* width: 50vw; */
     flex-direction: column;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    padding: 8px 10px;
-    border-radius: 18px;
-    /* max-width: 600px; */
-    margin: 0 auto;
-    color: #eaeaea;
-    font-size: 0.8rem;
-    line-height: 1.6;
-    font-weight: 300;
-    box-shadow: 0 0 25px rgba(120, 90, 250, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin-left: 10vw;
+  }
+  .inputs-showing input {
+    width: 100%;
+  }
+  .footerSection-focusMode {
+    width: 50%;
+  }
+  .focusMode-tips {
+    margin-top: 10vh;
     margin-left: 2vw;
+    /* width: ; */
+    height: 20vh;
   }
 
   .focusMode-pomodoro-btns button {
-    width: 2vw;
-    height: 2vh;
+    width: 50vw;
+    height: 5vh;
     font-size: 0.8rem;
     text-align: center;
   }

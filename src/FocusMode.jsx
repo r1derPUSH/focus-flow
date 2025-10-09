@@ -133,80 +133,95 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
         </span>
       </div>
       <div className="flex-flexes">
-        <div className="flex-focus-1">
-          <div className="focusMode-pomodoro-timer">
-            <div className="focusMode-pomodoro-btns">
-              <div
-                className={
-                  isTimeOfWorkAndBreak ? "btns-showing" : "btns-notShowing"
-                }
-              >
-                {!isRunning ? (
-                  <button className="start-btn-focusMode" onClick={handleStart}>
-                    Start
-                  </button>
-                ) : (
-                  ""
-                )}
-                <button className="pause-btn-focusMode" onClick={handleStop}>
-                  Pause
-                </button>
-                <button className="reset-btn-focusMode" onClick={handleFinish}>
-                  Reset
-                </button>
-                <button onClick={handleBreak} className="break-btn-focusMode">
-                  Break
-                </button>
-                <button onClick={handleFocus} className="focus-btn-focusMode">
-                  Focus
-                </button>
-              </div>
-              <div
-                className={
-                  !isTimeOfWorkAndBreak ? "inputs-showing" : "inputs-notShowing"
-                }
-              >
-                <input
-                  min={0}
-                  max={60}
-                  value={workTime}
-                  onChange={handleWorkTimeChange}
-                  type="number"
-                  placeholder="Work Time in Minutes"
-                />
-                <input
-                  min={0}
-                  max={60}
-                  value={breakTime}
-                  onChange={handleBreakTimeChange}
-                  type="number"
-                  placeholder="Break Time in Minutes"
-                />
-                <button
-                  className="set-time-focusMode"
-                  onClick={setWorkAndBreakTime}
+        <div className="centerFlex">
+          <div className="flex-focus-1">
+            <div className="focusMode-pomodoro-timer">
+              <div className="focusMode-pomodoro-btns">
+                <div
+                  className={
+                    isTimeOfWorkAndBreak ? "btns-showing" : "btns-notShowing"
+                  }
                 >
-                  Set Time
-                </button>
+                  {!isRunning ? (
+                    <button
+                      className="start-btn-focusMode"
+                      onClick={handleStart}
+                    >
+                      Start
+                    </button>
+                  ) : (
+                    ""
+                  )}
+                  <button className="pause-btn-focusMode" onClick={handleStop}>
+                    Pause
+                  </button>
+                  <button
+                    className="reset-btn-focusMode"
+                    onClick={handleFinish}
+                  >
+                    Reset
+                  </button>
+                  <button onClick={handleBreak} className="break-btn-focusMode">
+                    Break
+                  </button>
+                  <button onClick={handleFocus} className="focus-btn-focusMode">
+                    Focus
+                  </button>
+                </div>
+                <div
+                  className={
+                    !isTimeOfWorkAndBreak
+                      ? "inputs-showing"
+                      : "inputs-notShowing"
+                  }
+                >
+                  <input
+                    min={0}
+                    max={60}
+                    value={workTime}
+                    onChange={handleWorkTimeChange}
+                    type="number"
+                    placeholder="Work Time in Minutes"
+                  />
+                  <input
+                    min={0}
+                    max={60}
+                    value={breakTime}
+                    onChange={handleBreakTimeChange}
+                    type="number"
+                    placeholder="Break Time in Minutes"
+                  />
+                  <button
+                    className="set-time-focusMode"
+                    onClick={setWorkAndBreakTime}
+                  >
+                    Set Time
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="footerSection-focusMode">
-            <div className="focusMode-tips">
-              <span>🎯 Single-task: Focus on one task at a time.</span>
-              <span>
-                ⏱️ Set a timer: Work in 25–50 min sessions with short breaks.
-              </span>
-              <span>
-                💬 Use AI: Type your current task into ChatGPT or a neural tool
-                to get clarity or ideas.
-              </span>
-              <span>
-                ✅ Mini goals: Break tasks into small, achievable steps.
-              </span>
-              <span>
-                🚶 Move often: Take short stretches or walks during breaks.
-              </span>
+            <div className="footerSection-focusMode">
+              <div className="focusMode-tips">
+                <span>
+                  <b>🎯 Single-task:</b> Focus on one task at a time.
+                </span>
+                <span>
+                  <b> ⏱️ Set a timer: </b> Work in 25–50 min sessions with short
+                  breaks.
+                </span>
+                <span>
+                  <b>💬 Use AI: </b> Type your current task into ChatGPT or a
+                  neural tool to get clarity or ideas.
+                </span>
+                <span>
+                  <b>✅ Mini goals: </b> Break tasks into small, achievable
+                  steps.
+                </span>
+                <span>
+                  <b> 🚶 Move often: </b> Take short stretches or walks during
+                  breaks.
+                </span>
+              </div>
             </div>
           </div>
         </div>

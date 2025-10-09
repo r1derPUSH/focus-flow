@@ -62,6 +62,7 @@ const Register = () => {
     if (!nameValue.trim()) {
     }
     localStorage.setItem("name", nameValue || "Guest");
+    localStorage.setItem("user-image", kindOfAvatar);
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
