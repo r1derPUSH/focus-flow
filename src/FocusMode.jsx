@@ -126,11 +126,13 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
 
   return (
     <>
-      <div className="focusMode-task-container">
-        <span className="focusMode-task-name">{currentTask}</span>
-        <span className="focusMode-task-description">
-          {localStorage.getItem(currentTask)}
-        </span>
+      <div className="centerTaskName">
+        <div className="focusMode-task-container">
+          <span className="focusMode-task-name">{currentTask}</span>
+          <span className="focusMode-task-description">
+            {localStorage.getItem(currentTask)}
+          </span>
+        </div>
       </div>
       <div className="flex-flexes">
         <div className="centerFlex">

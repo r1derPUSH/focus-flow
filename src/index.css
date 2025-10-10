@@ -280,11 +280,18 @@ body {
 
 /* Focus Mode */
 
+.centerTaskName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .focusMode-task-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 30vw;
 }
 
 .focusMode-hide {
@@ -349,6 +356,9 @@ body {
 
 .focusMode-pomodoro-btns button {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .focusMode-tips {
@@ -384,7 +394,8 @@ body {
 
 .btns-showing {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 30vw;
 }
 
@@ -576,7 +587,7 @@ body {
   border-radius: 14px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 90%;
-  height: 50vh;
+  height: 80vh;
   margin: 2rem auto;
   animation: drawFromLeft 0.7s ease-out forwards;
   transform-origin: left;
