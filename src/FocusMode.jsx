@@ -202,6 +202,27 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                 </div>
               </div>
             </div>
+            <div className="flex-focus-2">
+              <div className="focusMode-timer-span">
+                <span className="timer">
+                  {mode} {formatTime(minutes)}:{formatTime(seconds)}
+                </span>
+              </div>
+              <div className="finishTask-focusMode-section">
+                <button
+                  className="backHome-focusMode-btn"
+                  onClick={backToTasks}
+                >
+                  Go Back
+                </button>
+                <button
+                  className="finishTask-focusMode-btn"
+                  onClick={finishTask}
+                >
+                  Finish
+                </button>
+              </div>
+            </div>
             <div className="footerSection-focusMode">
               <div className="focusMode-tips">
                 <span>
@@ -225,21 +246,6 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex-focus-2">
-          <div className="focusMode-timer-span">
-            <span className="timer">
-              {mode} {formatTime(minutes)}:{formatTime(seconds)}
-            </span>
-          </div>
-          <div className="finishTask-focusMode-section">
-            <button className="backHome-focusMode-btn" onClick={backToTasks}>
-              Go Back
-            </button>
-            <button className="finishTask-focusMode-btn" onClick={finishTask}>
-              Finish
-            </button>
           </div>
         </div>
       </div>
