@@ -202,48 +202,50 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                 </div>
               </div>
             </div>
-            <div className="flex-focus-2">
-              <div className="focusMode-timer-span">
-                <span className="timer">
-                  {mode} {formatTime(minutes)}:{formatTime(seconds)}
-                </span>
+            <div className="flex-tips-and-timer">
+              <div className="flex-focus-2">
+                <div className="focusMode-timer-span">
+                  <span className="timer">
+                    {mode} {formatTime(minutes)}:{formatTime(seconds)}
+                  </span>
+                </div>
+                <div className="finishTask-focusMode-section">
+                  <button
+                    className="backHome-focusMode-btn"
+                    onClick={backToTasks}
+                  >
+                    Go Back
+                  </button>
+                  <button
+                    className="finishTask-focusMode-btn"
+                    onClick={finishTask}
+                  >
+                    Finish
+                  </button>
+                </div>
               </div>
-              <div className="finishTask-focusMode-section">
-                <button
-                  className="backHome-focusMode-btn"
-                  onClick={backToTasks}
-                >
-                  Go Back
-                </button>
-                <button
-                  className="finishTask-focusMode-btn"
-                  onClick={finishTask}
-                >
-                  Finish
-                </button>
-              </div>
-            </div>
-            <div className="footerSection-focusMode">
-              <div className="focusMode-tips">
-                <span>
-                  <b>🎯 Single-task:</b> Focus on one task at a time.
-                </span>
-                <span>
-                  <b> ⏱️ Set a timer: </b> Work in 25–50 min sessions with short
-                  breaks.
-                </span>
-                <span>
-                  <b>💬 Use AI: </b> Type your current task into ChatGPT or a
-                  neural tool to get clarity or ideas.
-                </span>
-                <span>
-                  <b>✅ Mini goals: </b> Break tasks into small, achievable
-                  steps.
-                </span>
-                <span>
-                  <b> 🚶 Move often: </b> Take short stretches or walks during
-                  breaks.
-                </span>
+              <div className="footerSection-focusMode">
+                <div className="focusMode-tips">
+                  <span>
+                    <b>🎯 Single-task:</b> Focus on one task at a time.
+                  </span>
+                  <span>
+                    <b> ⏱️ Set a timer: </b> Work in 25–50 min sessions with
+                    short breaks.
+                  </span>
+                  <span>
+                    <b>💬 Use AI: </b> Type your current task into ChatGPT or a
+                    neural tool to get clarity or ideas.
+                  </span>
+                  <span>
+                    <b>✅ Mini goals: </b> Break tasks into small, achievable
+                    steps.
+                  </span>
+                  <span>
+                    <b> 🚶 Move often: </b> Take short stretches or walks during
+                    breaks.
+                  </span>
+                </div>
               </div>
             </div>
           </div>

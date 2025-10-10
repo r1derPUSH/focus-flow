@@ -534,6 +534,13 @@ body {
   display: none;
 }
 
+.flex-tips-and-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 /* Endpoint of typewriter */
 
 @keyframes gradientFlow {
@@ -1144,6 +1151,9 @@ body {
 }
 
 @media (max-width: 1100px) {
+  .flex-tips-and-timer {
+    flex-direction: column;
+  }
   .btns-showing {
     display: flex;
     flex-direction: column;
