@@ -62,6 +62,15 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
   };
 
   const finishTask = () => {
+    // * local section
+
+    // const arr = JSON.parse(localStorage.getItem("finished-tasks" || "[]"));
+
+    // arr.push(currentTask);
+
+    // localStorage.setItem("finished-tasks", JSON.stringify(arr));
+
+    // * end local section
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
     setIsRunning(false);
     setTimeLeft(0);
