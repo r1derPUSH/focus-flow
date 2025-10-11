@@ -10,10 +10,6 @@ function App() {
         <Route path="/completed" element={<CompletedTasks />}></Route>
       </Routes>
     </HashRouter>
-    // <>
-    //   <Register />
-    //   <CompletedTasks />
-    // </>
   );
 }
 
