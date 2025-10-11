@@ -4,9 +4,16 @@ import Greeting from "./Greeting";
 import avatar from "./assets/man-avatar.jpg";
 import avatar2 from "./assets/woman-avatar.png";
 import taskImg from "./assets/tasks-image.png";
+import { useNavigate } from "react-router-dom";
 
 function Header({ name, surname }) {
+  const navigate = useNavigate();
   const isManOrWoman = localStorage.getItem("user-image");
+
+  const handleRouter = () => {
+    navigate("/completed");
+  };
+
   return (
     <>
       <header className="header-tag">
@@ -17,7 +24,12 @@ function Header({ name, surname }) {
               <h1 className="logo-text">Focus Flow</h1>
             </div>
             <div className="flex-header-images-rightSide">
-              <img className="task-img" src={taskImg} alt="" />
+              <img
+                onClick={handleRouter}
+                className="task-img"
+                src={taskImg}
+                alt=""
+              />
               <img
                 src={
                   isManOrWoman === "man"
