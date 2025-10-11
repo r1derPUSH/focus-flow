@@ -5,7 +5,7 @@ import { useState } from "react";
 import MainContent from "./MainContent";
 import { useEffect } from "react";
 
-const Register = () => {
+const Register = ({ setIsRegistered }) => {
   useEffect(() => {
     document.body.style.backgroundColor = "#1e1e1e";
   }, []);
@@ -46,6 +46,7 @@ const Register = () => {
   }
 
   async function handleStart() {
+    localStorage.setItem("isRegistered", true);
     if (!nameValue.trim()) {
       alert("bad :(");
       return;
@@ -56,6 +57,7 @@ const Register = () => {
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
+    // setIsRegistered(true);
   }
 
   async function handleSkip() {
