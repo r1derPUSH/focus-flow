@@ -1,15 +1,15 @@
 import Register from "./Register";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import CompletedTasks from "./CompletedTasks";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router basename="/react-project">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Register />}></Route>
         <Route path="/completed" element={<CompletedTasks />}></Route>
       </Routes>
-    </Router>
+    </HashRouter>
     // <>
     //   <Register />
     //   <CompletedTasks />
