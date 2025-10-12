@@ -9,12 +9,10 @@ function App() {
   if (!LC) {
     localStorage.setItem("isRegistered", false);
   }
-  // const [isRegistered, setIsRegistered] = useState(false);
   const [isRegisteredLC, setIsRegisteredLC] = useState(() => {
     const isRegisteredLocalStorage = localStorage.getItem("isRegistered");
     return isRegisteredLocalStorage;
   });
-  // const isRegisteredLocalStorage = localStorage.getItem("isRegistered");
 
   useEffect(() => {
     setIsRegisteredLC(localStorage.getItem("isRegistered"));
