@@ -15,13 +15,15 @@ function CompletedTasks({ tasks }) {
         <span className="header-span">Completed Tasks</span>
       </div>
       <ul>
-        {tasks.map((task) => (
-          <CompletedTaskComponent
-            key={Math.random()}
-            task={task}
-            desc={localStorage.getItem(task)}
-          />
-        ))}
+        {tasks
+          ? tasks.map((task) => (
+              <CompletedTaskComponent
+                key={Math.random()}
+                task={task}
+                desc={localStorage.getItem(task)}
+              />
+            ))
+          : "Here will be your tasks"}
       </ul>
       <div className="btns-container">
         <button className="finished-page" onClick={handleRouterBack}>
