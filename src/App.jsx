@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import MainContent from "./MainContent";
 
 function App() {
-  const finishedTasks = localStorage.getItem("finished-tasks");
+  const [finishedTasks, setFinishedTasks] = useState([]);
+  const [secs, setSecs] = useState(0);
   const LC = localStorage.getItem("isRegistered");
   if (!LC) {
     localStorage.setItem("isRegistered", false);
@@ -15,11 +16,14 @@ function App() {
     return isRegisteredLocalStorage;
   });
 
+  const timer = setTimeout(() => {
+    setSecs((prev) => prev + 1);
+  }, 5000);
+
   useEffect(() => {
     setIsRegisteredLC(localStorage.getItem("isRegistered"));
-  });
-
-  console.log(isRegisteredLC);
+    setFinishedTasks(JSON.parse(localStorage.getItem("finished-tasks")));
+  }, [secs]);
 
   return (
     <HashRouter>
@@ -31,7 +35,7 @@ function App() {
         )}
         <Route
           path="/completed"
-          element={<CompletedTasks finishedTasks={finishedTasks} />}
+          element={<CompletedTasks tasks={finishedTasks} />}
         ></Route>
       </Routes>
     </HashRouter>
