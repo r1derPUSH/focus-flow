@@ -11,7 +11,9 @@ function CompletedTasks({ tasks }) {
 
   return (
     <>
-      <div>Completed Tasks</div>
+      <div className="header-name">
+        <span className="header-span">Completed Tasks</span>
+      </div>
       <ul>
         {tasks.map((task) => (
           <CompletedTaskComponent

@@ -4,6 +4,24 @@
   align-items: center;
 }
 
+/* Контейнер заголовка */
+.header-name {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Текст заголовка */
+.header-span {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
 .finished-task {
   display: flex;
   justify-content: space-between;
