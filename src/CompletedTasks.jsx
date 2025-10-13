@@ -11,6 +11,7 @@ function CompletedTasks() {
   return (
     <>
       <div>Completed Tasks</div>
+
       <button onClick={handleRouterBack}>Back to home</button>
     </>
   );

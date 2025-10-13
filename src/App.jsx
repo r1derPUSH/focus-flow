@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import MainContent from "./MainContent";
 
 function App() {
+  const finishedTasks = localStorage.getItem("finished-tasks");
   const LC = localStorage.getItem("isRegistered");
   if (!LC) {
     localStorage.setItem("isRegistered", false);
@@ -28,7 +29,10 @@ function App() {
         ) : (
           <Route path="/" element={<MainContent />}></Route>
         )}
-        <Route path="/completed" element={<CompletedTasks />}></Route>
+        <Route
+          path="/completed"
+          element={<CompletedTasks finishedTasks={finishedTasks} />}
+        ></Route>
       </Routes>
     </HashRouter>
   );
