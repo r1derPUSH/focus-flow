@@ -2,6 +2,8 @@ import { span } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
 function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
+  // localStorage.setItem("finished-tasks", "[]");
+
   console.log(currentTask);
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
@@ -62,13 +64,11 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
   };
 
   const finishTask = () => {
-    // * local section
+    const arr = JSON.parse(localStorage.getItem("finished-tasks") || "[]");
 
-    // const arr = JSON.parse(localStorage.getItem("finished-tasks" || "[]"));
+    arr.push(currentTask);
 
-    // arr.push(currentTask);
-
-    // localStorage.setItem("finished-tasks", JSON.stringify(arr));
+    localStorage.setItem("finished-tasks", JSON.stringify(arr));
 
     // * end local section
     setIsTimeOfWorkAndBreak(!isTimeOfWorkAndBreak);
@@ -77,7 +77,6 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     setWorkTime("");
     setBreakTime("");
     setIsFocusMode(false);
-    localStorage.setItem("finished-tasks", currentTask);
     localStorage.setItem(
       "task-name",
       JSON.stringify(tasks.filter((item) => item != currentTask))
