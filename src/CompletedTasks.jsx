@@ -21,7 +21,12 @@ function CompletedTasks({ tasks }) {
           />
         ))}
       </ul>
-      <button onClick={handleRouterBack}>Back to home</button>
+      <div className="btns-container">
+        <button className="finished-page" onClick={handleRouterBack}>
+          Back to home
+        </button>
+        <button className="clearDataBase">Clear Data</button>
+      </div>
     </>
   );
 }

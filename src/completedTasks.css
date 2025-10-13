@@ -34,3 +34,59 @@
   color: #b0b0b0;
   opacity: 0.8;
 }
+
+/* btns */
+
+/* Загальний стиль для всіх кнопок */
+
+.btns-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Кнопка "Back to home" */
+.finished-page {
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.finished-page:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.finished-page:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка "Clear Data" */
+.clearDataBase {
+  composes: button-shared; /* якщо використовуєш CSS Modules */
+  color: #fff;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.clearDataBase:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+.clearDataBase:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
