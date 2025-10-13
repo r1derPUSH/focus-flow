@@ -37,6 +37,25 @@ function UserTask({
   };
 
   const handleFinish = () => {
+    // local strg
+
+    const arr = JSON.parse(localStorage.getItem("finished-tasks") || "[]");
+
+    arr.push(task);
+
+    localStorage.setItem("finished-tasks", JSON.stringify(arr));
+
+    // # 2
+
+    const currentDesc = localStorage.getItem(task);
+
+    const arr2 = JSON.parse(localStorage.getItem("finished-descs") || "[]");
+
+    arr2.push(currentDesc);
+
+    localStorage.setItem("finished-descs", JSON.stringify(arr2));
+
+    // endpoint of lcl strg
     setCompletedTasks(completedTasks + 1);
     setTasks(tasks.filter((item) => item !== task));
     setFinishedTasks([...finishedTasks, task]);
