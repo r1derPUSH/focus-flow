@@ -74,14 +74,21 @@
    ```
 2. Navigate to the project folder:
 
+   ```bash
+
    cd focus-flow
+   ```
 
 3. Install dependencies:
+
+   ```bash
    npm install
+   ```
 
 4. Start the development server:
+   ```bash
    npm start
-
+   ```
 5. Open http://localhost:3000 in your browser 🌐.
 
 **Usage 🎯**
