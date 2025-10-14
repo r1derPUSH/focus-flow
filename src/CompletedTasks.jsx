@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CompletedTaskComponent from "./CompletedTaskComponent";
 
-function CompletedTasks({ tasks }) {
+function CompletedTasks({ tasks, isHandleEffect, setIsHandleEffect }) {
   const navigate = useNavigate();
 
   const handleRouterBack = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    setIsHandleEffect(!isHandleEffect);
+  }, []);
+
   const clearData = () => {
     localStorage.removeItem("finished-tasks");
     localStorage.removeItem("finished-descs");
+    setIsHandleEffect(!isHandleEffect);
   };
 
   return (
@@ -23,6 +28,8 @@ function CompletedTasks({ tasks }) {
         {tasks
           ? tasks.map((task) => (
               <CompletedTaskComponent
+                isHandleEffect={isHandleEffect}
+                setIsHandleEffect={setIsHandleEffect}
                 key={Math.random()}
                 task={task}
                 desc={localStorage.getItem(task)}

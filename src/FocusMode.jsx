@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
   // localStorage.setItem("finished-tasks", "[]");
 
-  console.log(currentTask);
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
@@ -107,13 +106,6 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
 
   //   return `${minutes}:${seconds}`;
   // }
-
-  useEffect(() => {
-    // console.log(`Work time: ${workTime}`);
-    console.log(timeLeft);
-    console.log(minutes);
-    console.log(seconds);
-  });
 
   useEffect(() => {
     const mins = Math.floor(timeLeft / 60);

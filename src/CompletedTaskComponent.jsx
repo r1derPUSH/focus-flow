@@ -1,7 +1,12 @@
 import React from "react";
 import "./completedTasks.css";
 
-function CompletedTaskComponent({ task, desc }) {
+function CompletedTaskComponent({
+  task,
+  desc,
+  isHandleEffect,
+  setIsHandleEffect,
+}) {
   const clearTaskBtn = () => {
     let arr1 = JSON.parse(localStorage.getItem("finished-tasks"));
 
@@ -14,6 +19,8 @@ function CompletedTaskComponent({ task, desc }) {
     arr2 = arr2.filter((i) => i != desc);
 
     localStorage.setItem("finished-descs", JSON.stringify(arr2)) || [];
+
+    setIsHandleEffect(!isHandleEffect);
   };
 
   return (

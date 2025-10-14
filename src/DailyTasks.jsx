@@ -37,8 +37,6 @@ function DailyTasks({
     );
     setTotalTasks(tasks.length);
   }
-  console.log(tasks);
-  console.log(`This is desctipion: ${descs}`);
 
   return (
     <>
