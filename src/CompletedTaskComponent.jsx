@@ -6,7 +6,7 @@ function CompletedTaskComponent({ task, desc }) {
     <div className="centerTasks">
       <div className="finished-task">
         <span>{task}</span> <span>{desc}</span>
-        <button>Clear Task</button>
+        <button className="clearTaskBtn">Clear Task</button>
       </div>
     </div>
   );

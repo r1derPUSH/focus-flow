@@ -108,3 +108,30 @@ button {
   transform: translateY(1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* cleartask btn - варіант 4 */
+
+.clearTaskBtn {
+  /* padding: 10px 25px; */
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+  color: #fff;
+  background: linear-gradient(135deg, #4b4e6d, #6c71a0);
+}
+
+.clearTaskBtn:hover {
+  /* transform: translateY(-3px); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #6c71a0, #4b4e6d);
+}
+
+.clearTaskBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
