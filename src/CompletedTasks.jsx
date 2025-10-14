@@ -11,6 +11,7 @@ function CompletedTasks({ tasks }) {
 
   const clearData = () => {
     localStorage.removeItem("finished-tasks");
+    localStorage.removeItem("finished-descs");
   };
 
   return (

@@ -11,7 +11,7 @@ function CompletedTaskComponent({ task, desc }) {
 
     let arr2 = JSON.parse(localStorage.getItem("finished-descs"));
 
-    arr2 = arr2.filter((i) => i != task);
+    arr2 = arr2.filter((i) => i != desc);
 
     localStorage.setItem("finished-descs", JSON.stringify(arr2)) || [];
   };
