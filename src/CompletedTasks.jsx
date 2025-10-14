@@ -9,6 +9,10 @@ function CompletedTasks({ tasks }) {
     navigate("/");
   };
 
+  const clearData = () => {
+    localStorage.removeItem("finished-tasks");
+  };
+
   return (
     <>
       <div className="header-name">
@@ -29,7 +33,9 @@ function CompletedTasks({ tasks }) {
         <button className="finished-page" onClick={handleRouterBack}>
           Back to home
         </button>
-        <button className="clearDataBase">Clear Data</button>
+        <button onClick={clearData} className="clearDataBase">
+          Clear Data
+        </button>
       </div>
     </>
   );
