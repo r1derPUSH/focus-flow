@@ -4,6 +4,14 @@
 
 👉 [Focus Flow on GitHub Pages](https://r1derpush.github.io/react-project/)
 
+## 🖼️ Screenshots
+
+**Below are some screenshots of Focus Flow in action 🚀**
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
 **Focus Flow** is a productivity web application that helps users organize tasks, track progress, and stay focused using a Focus Mode inspired by the Pomodoro technique ⏱️.
 
 ---
