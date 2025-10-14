@@ -91,14 +91,14 @@
    ```
 5. Open http://localhost:3000 in your browser 🌐.
 
-**Usage 🎯**
+## Usage 🎯##
 
-- Open the app and register by filling in your name, surname, and choosing an avatar (or skip registration 😉).
+- **Open the app and register by filling in your name, surname, and choosing an avatar (or skip registration 😉)**
 
-- Create tasks with optional descriptions 📝.
+- **Create tasks with optional descriptions 📝.**
 
-- Use the Focus button to enter Focus Mode for a specific task 🔥.
+- **Use the Focus button to enter Focus Mode for a specific task 🔥.**
 
-- Mark tasks as finished ✅ or remove them 🗑️.
+- **Mark tasks as finished ✅ or remove them 🗑️.**
 
-- Completed tasks are tracked and stored automatically 📊.
+- **Completed tasks are tracked and stored automatically 📊.**
