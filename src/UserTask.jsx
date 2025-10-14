@@ -58,12 +58,17 @@ function UserTask({
     // endpoint of lcl strg
     setCompletedTasks(completedTasks + 1);
     setTasks(tasks.filter((item) => item !== task));
+    setDescs(descs.filter((item) => item != localStorage.getItem(task)));
     setFinishedTasks([...finishedTasks, task]);
     localStorage.setItem("total-tasks", tasks.length);
     localStorage.setItem("completed-tasks", completedTasks);
     localStorage.setItem(
       "task-name",
       JSON.stringify(tasks.filter((item) => item !== task))
+    );
+    localStorage.setItem(
+      "task-description",
+      JSON.stringify(descs.filter((item) => item != localStorage.getItem(task)))
     );
   };
 
