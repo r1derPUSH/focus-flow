@@ -914,6 +914,14 @@ input[type="number"] {
   flex-wrap: wrap;
 }
 
+.task-buttons button {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
+}
+
 .user-task button.focus {
   background: linear-gradient(135deg, #4caf50, #3e8e41);
   color: #fff;
