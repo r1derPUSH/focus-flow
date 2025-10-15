@@ -7,7 +7,6 @@ import MainContent from "./MainContent";
 function App() {
   const [isHandleEffect, setIsHandleEffect] = useState(false);
   const [finishedTasks, setFinishedTasks] = useState([]);
-  const [secs, setSecs] = useState(0);
   const LC = localStorage.getItem("isRegistered");
   if (!LC) {
     localStorage.setItem("isRegistered", false);
@@ -16,10 +15,6 @@ function App() {
     const isRegisteredLocalStorage = localStorage.getItem("isRegistered");
     return isRegisteredLocalStorage;
   });
-
-  const timer = setTimeout(() => {
-    setSecs((prev) => prev + 1);
-  }, 1000);
 
   useEffect(() => {
     setIsRegisteredLC(localStorage.getItem("isRegistered"));

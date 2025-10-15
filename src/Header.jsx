@@ -1,12 +1,10 @@
 import logo from "./assets/logo.png";
-import notification from "./assets/notification.png";
-import Greeting from "./Greeting";
 import avatar from "./assets/man-avatar.jpg";
 import avatar2 from "./assets/woman-avatar.png";
 import taskImg from "./assets/tasks-image.png";
 import { useNavigate } from "react-router-dom";
 
-function Header({ name, surname }) {
+function Header() {
   const navigate = useNavigate();
   const isManOrWoman = localStorage.getItem("user-image");
 

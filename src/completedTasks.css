@@ -4,14 +4,12 @@
   align-items: center;
 }
 
-/* Контейнер заголовка */
 .header-name {
   display: flex;
   justify-content: center;
   margin: 20px 0;
 }
 
-/* Текст заголовка */
 .header-span {
   font-size: 2rem;
   font-weight: 700;
@@ -26,7 +24,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background: #1e1e1e; /* темний фон */
   color: #e0e0e0; /* світлий текст */
   padding: 12px 16px;
@@ -44,7 +41,7 @@
 
 .finished-task span:first-child {
   font-weight: 600;
-  color: #4caf50; /* зелений — як знак виконаної задачі */
+  color: #4caf50;
 }
 
 .finished-task span:last-child {
@@ -54,8 +51,6 @@
 }
 
 /* btns */
-
-/* Загальний стиль для всіх кнопок */
 
 .btns-container {
   display: flex;
@@ -74,7 +69,6 @@ button {
   transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-/* Кнопка "Back to home" */
 .finished-page {
   color: #fff;
   background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -91,9 +85,8 @@ button {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Кнопка "Clear Data" */
 .clearDataBase {
-  composes: button-shared; /* якщо використовуєш CSS Modules */
+  composes: button-shared;
   color: #fff;
   background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
@@ -109,10 +102,7 @@ button {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* cleartask btn - варіант 4 */
-
 .clearTaskBtn {
-  /* padding: 10px 25px; */
   font-size: 1rem;
   font-weight: 600;
   border: none;
@@ -126,7 +116,6 @@ button {
 }
 
 .clearTaskBtn:hover {
-  /* transform: translateY(-3px); */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #6c71a0, #4b4e6d);
 }
