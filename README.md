@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-👉 [Focus Flow on GitHub Pages](https://r1derpush.github.io/react-project/)
+👉 [Focus Flow on GitHub Pages](https://r1derpush.github.io/focus-flow/)
 
 ## 🖼️ Screenshots
 
