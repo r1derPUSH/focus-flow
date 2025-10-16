@@ -116,3 +116,5 @@
 - **Mark tasks as finished ✅ or remove them 🗑️.**
 
 - **Completed tasks are tracked and stored automatically 📊.**
+
+## Made by r1derPUSH 🥷🏾
