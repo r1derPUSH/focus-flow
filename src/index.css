@@ -7,14 +7,12 @@ body {
   background-color: #121212;
 }
 
-/* Прибирає стрілочки в Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Прибирає стрілки в Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -337,13 +335,13 @@ input[type="number"] {
 .timer {
   display: inline-block;
   font-family: "Ubuntu", sans-serif;
-  font-size: 2rem; /* великий і читабельний текст */
+  font-size: 2rem;
   font-weight: 700;
-  color: #ffffff; /* білий текст */
-  background: #2c2c2c; /* темний фон */
+  color: #ffffff;
+  background: #2c2c2c;
   padding: 10px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* легка тінь */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -362,7 +360,6 @@ input[type="number"] {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* margin-top: 5vh; */
   margin-bottom: 5vh;
 }
 
@@ -446,7 +443,7 @@ input[type="number"] {
 }
 
 .backHome-focusMode-btn:hover {
-  background: #374151; /* трохи світліший сірий з синю ноткою */
+  background: #374151;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
@@ -460,11 +457,7 @@ input[type="number"] {
 /* ===== Finish button ===== */
 
 .finishTask-focusMode-btn {
-  background: linear-gradient(
-    135deg,
-    #f87171,
-    #fb923c
-  ); /* градієнт: теплий червоний → оранжевий */
+  background: linear-gradient(135deg, #f87171, #fb923c);
   color: #ffffff;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -479,11 +472,7 @@ input[type="number"] {
 }
 
 .finishTask-focusMode-btn:hover {
-  background: linear-gradient(
-    135deg,
-    #ef4444,
-    #f97316
-  ); /* темніші тони градієнта */
+  background: linear-gradient(135deg, #ef4444, #f97316);
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 14px rgba(251, 146, 60, 0.55);
 }
@@ -513,11 +502,11 @@ input[type="number"] {
   margin: 2rem auto;
 }
 
-/* Typewriter - оновлений */
+/* Typewriter */
 
 .focusMode-center-quote {
-  position: relative; /* щоб не лізло за межі контейнера */
-  font-size: clamp(1.2rem, 2vw, 2rem); /* адаптивний розмір для всіх екранів */
+  position: relative;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 600;
   color: #eaeaea;
   text-align: center;
@@ -532,7 +521,6 @@ input[type="number"] {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  /* border-right: 2px solid #58c4dc; класичний курсор */
   animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
 }
 
@@ -899,7 +887,6 @@ input[type="number"] {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Опис таски */
 .user-task .task-description {
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
   color: #bfbfbf;
@@ -1067,7 +1054,6 @@ input[type="number"] {
   margin-top: 20px;
 }
 
-/* Блок кнопок Start/Pause/Reset */
 .btns-showing,
 .inputs-showing {
   display: flex;
@@ -1080,7 +1066,6 @@ input[type="number"] {
   display: none;
 }
 
-/* Стиль кнопок загальний */
 .focusMode-pomodoro-btns button {
   padding: 12px 28px;
   border: none;
@@ -1111,7 +1096,6 @@ input[type="number"] {
   transform: translateY(-2px) scale(1.03);
 }
 
-/* Start button — синій темний */
 .start-btn-focusMode {
   background: linear-gradient(145deg, #1f3c6e, #3359a4);
 }
@@ -1121,7 +1105,6 @@ input[type="number"] {
   transform: translateY(-2px) scale(1.03);
 }
 
-/* Pause button — нейтральний темний */
 .pause-btn-focusMode {
   background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
 }
@@ -1131,7 +1114,6 @@ input[type="number"] {
   transform: translateY(-2px) scale(1.02);
 }
 
-/* Reset button — теплий темний червоний */
 .reset-btn-focusMode {
   background: linear-gradient(145deg, #5c1a1a, #842222);
 }
@@ -1141,7 +1123,6 @@ input[type="number"] {
   transform: translateY(-2px) scale(1.03);
 }
 
-/* Стиль інпутів — темні з легким акцентом при фокусі */
 .focusMode-pomodoro-btns input {
   padding: 10px 14px;
   border-radius: 12px;
@@ -1199,7 +1180,6 @@ input[type="number"] {
     align-items: center;
     margin-top: 20vh;
     margin-right: 5vw;
-    /* margin-bottom: 30vh; */
   }
   .flex-focus-1 {
     margin-top: 5vh;
@@ -1213,14 +1193,11 @@ input[type="number"] {
     flex-direction: column;
   }
   .inputs-showing {
-    /* width: 50vw; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-left: vw; */
     margin-top: 10vh;
     margin-right: 6vw;
-    /* margin-bottom: -20vh; */
   }
   .inputs-showing input {
     width: 65vw;
@@ -1291,7 +1268,6 @@ input[type="number"] {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* margin-top: 5vh; */
     margin-bottom: 15vh;
   }
   .progress-bar-section-focusModeActivated {
@@ -1310,13 +1286,13 @@ input[type="number"] {
   .timer {
     display: inline-block;
     font-family: "Ubuntu", sans-serif;
-    font-size: 1.5rem; /* великий і читабельний текст */
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff; /* білий текст */
-    background: #2c2c2c; /* темний фон */
+    color: #ffffff;
+    background: #2c2c2c;
     padding: 10px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* легка тінь */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: all 0.3s ease;
   }

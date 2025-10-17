@@ -1,14 +1,10 @@
-import { span } from "framer-motion/client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
-  // localStorage.setItem("finished-tasks", "[]");
-
   const [workTime, setWorkTime] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
   const [mode, setMode] = useState("Focus :");
-  const [hide, setHide] = useState(false);
   const [timeLeft, setTimeLeft] = useState(workTime);
   const [isRunning, setIsRunning] = useState(false);
   const [isTimeOfWorkAndBreak, setIsTimeOfWorkAndBreak] = useState(false);
@@ -100,13 +96,6 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     return `0${str}`;
   }
 
-  // function formatTime(val) {
-  //   const minutes = Math.floor(val / 60);
-  //   const seconds = (val * 60) % 60;
-
-  //   return `${minutes}:${seconds}`;
-  // }
-
   useEffect(() => {
     const mins = Math.floor(timeLeft / 60);
     const secs = timeLeft % 60;
@@ -120,8 +109,6 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     }
 
     const interval = setInterval(() => {
-      // if (workTime != 0) {
-      // }
       setTimeLeft((prev) => {
         if (prev <= 1) {
           handleStop();

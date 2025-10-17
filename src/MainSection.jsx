@@ -5,9 +5,6 @@ import { useState } from "react";
 
 function MainSection({ name, surname }) {
   const localStorageTasksArr = JSON.parse(localStorage.getItem("task-name"));
-  const localStorageDescsArr = JSON.parse(
-    localStorage.getItem("task-descripton")
-  );
   const [tasks, setTasks] = useState(() => {
     const arr = localStorageTasksArr ? localStorageTasksArr : [];
     return arr;

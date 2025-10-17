@@ -24,8 +24,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1e1e1e; /* темний фон */
-  color: #e0e0e0; /* світлий текст */
+  background: #1e1e1e;
+  color: #e0e0e0;
   padding: 12px 16px;
   margin: 8px 0;
   border-radius: 12px;
