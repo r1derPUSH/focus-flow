@@ -105,7 +105,7 @@
    ```
 5. Open http://localhost:3000 in your browser 🌐.
 
-## Usage 🎯##
+## Usage 🎯 ##
 
 - **Open the app and register by filling in your name, surname, and choosing an avatar (or skip registration 😉)**
 
