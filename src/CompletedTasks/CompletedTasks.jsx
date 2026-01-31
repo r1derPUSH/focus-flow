@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import CompletedTaskComponent from "./CompletedTaskComponent";
+import CompletedTaskComponent from "../CompletedTasksComponent/CompletedTaskComponent";
+
+import "./CompletedTasks.css";
 
 function CompletedTasks({ tasks, isHandleEffect, setIsHandleEffect }) {
   const navigate = useNavigate();

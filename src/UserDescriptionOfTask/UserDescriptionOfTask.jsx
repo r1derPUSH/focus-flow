@@ -1,0 +1,100 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import "./UserDescriptionOfTask.css";
+
+function UserDescriptionOfTask({
+  isVisible,
+  setIsVisible,
+  setTasks,
+  tasks,
+  setDescs,
+  descs,
+}) {
+  const [taskValue, setTaskValue] = useState("");
+  const [descValue, setDescValue] = useState("");
+
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function handleCreate() {
+    setTasks((prev) => {
+      const data = [...prev, taskValue];
+      localStorage.setItem("task-name", JSON.stringify(data));
+      return data;
+    });
+    setDescs((prev) => {
+      const data = [...prev, descValue];
+      localStorage.setItem("task-description", JSON.stringify(data));
+      return data;
+    });
+
+    /* if */
+
+    /* endpoint of if */
+    localStorage.setItem(
+      "task-name",
+      JSON.stringify([
+        ...(JSON.parse(localStorage.getItem("task-name")) || []),
+        tasks,
+      ]),
+    );
+    localStorage.setItem(
+      "task-description",
+      JSON.stringify([
+        ...(JSON.parse(localStorage.getItem("task-description")) || []),
+        descs,
+      ]),
+    );
+    localStorage.setItem(taskValue, descValue);
+    await wait(100);
+    setTaskValue("");
+    setDescValue("");
+    setIsVisible(false);
+  }
+
+  const handleChangeTask = (e) => {
+    setTaskValue(e.target.value);
+  };
+
+  const handleChangeDesc = (e) => {
+    setDescValue(e.target.value);
+  };
+
+  if (isVisible) {
+    return (
+      <motion.div
+        className="user-description-of-task-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20, scale: 0.95 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
+        <input
+          className="input-uDesc"
+          value={taskValue}
+          type="text"
+          onChange={handleChangeTask}
+          placeholder="Task"
+        />
+        <input
+          className="input-uDesc"
+          value={descValue}
+          type="text"
+          onChange={handleChangeDesc}
+          placeholder="Description"
+        />
+        <div className="dropbox-bar">
+          <button className="create-task-button" onClick={handleCreate}>
+            Create
+          </button>
+        </div>
+      </motion.div>
+    );
+  }
+  if (!isVisible) {
+    return <></>;
+  }
+}
+
+export default UserDescriptionOfTask;

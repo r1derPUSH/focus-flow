@@ -1,0 +1,102 @@
+.user-description-of-task-container {
+  margin: 2vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.input-uDesc {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1vh 1.4vh;
+  color: #ffffff;
+  font-size: 1.2rem;
+  outline: none;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+  width: 17vw;
+  box-sizing: border-box;
+}
+
+.input-uDesc::placeholder {
+  opacity: 0.5;
+  color: #aaaaaa;
+}
+
+.input-uDesc:focus {
+  border: 1px solid #6c63ff;
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.5);
+}
+
+.dropbox-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-task-button {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.create-task-button:hover {
+  background: #3a3a3a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.create-task-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.create-task-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.create-task-button:hover::after {
+  left: 125%;
+}
+
+@media (max-width: 900px) {
+  .user-description-of-task-container {
+    flex-direction: column;
+  }
+
+  .user-description-of-task-container input {
+    margin: 1rem;
+    width: 35vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .user-description-of-task-container input::placeholder {
+    font-size: 1rem;
+  }
+}

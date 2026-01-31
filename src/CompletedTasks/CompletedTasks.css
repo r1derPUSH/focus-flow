@@ -1,0 +1,65 @@
+/* Header */
+
+.header-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.header-span {
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Buttons container */
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 4vh 0;
+}
+
+/* Back to home button */
+
+.finished-page {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4cafef, #0077ff);
+  color: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 255, 0.4);
+}
+
+.finished-page:hover {
+  background: linear-gradient(135deg, #5ec6ff, #3399ff);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Clear data button */
+
+.clearDataBase {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f87171, #fb923c);
+  color: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(251, 146, 60, 0.4);
+}
+
+.clearDataBase:hover {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  transform: translateY(-2px) scale(1.03);
+}

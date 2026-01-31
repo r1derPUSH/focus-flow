@@ -1,5 +1,5 @@
-import Register from "./Register";
-import CompletedTasks from "./CompletedTasks";
+import Register from "./Register/Register";
+import CompletedTasks from "./CompletedTasks/CompletedTasks";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MainContent from "./MainContent";

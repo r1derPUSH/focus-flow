@@ -1,6 +1,7 @@
 import { useState } from "react";
-import UserDescriptionOfTask from "./UserDescriptionOfTask";
-import UserTask from "./UserTask";
+import UserDescriptionOfTask from "../UserDescriptionOfTask/UserDescriptionOfTask";
+import UserTask from "../UserTask/UserTask";
+import "./DailyTasks.css";
 
 function DailyTasks({
   setTotalTasks,
@@ -16,7 +17,7 @@ function DailyTasks({
   setTasks,
 }) {
   const localStorageDescsArr = JSON.parse(
-    localStorage.getItem("task-descripton")
+    localStorage.getItem("task-descripton"),
   );
   const [inputValue, setInputValue] = useState("");
   const [descs, setDescs] = useState(() => {
@@ -32,7 +33,7 @@ function DailyTasks({
     localStorage.setItem("total-tasks", tasks.length);
     localStorage.setItem(
       "task-name",
-      JSON.stringify(tasks.filter((item) => item !== currentTask))
+      JSON.stringify(tasks.filter((item) => item !== currentTask)),
     );
     setTotalTasks(tasks.length);
   }

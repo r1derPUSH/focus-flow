@@ -1,7 +1,8 @@
-import logo from "./assets/logo.png";
-import avatar from "./assets/man-avatar.jpg";
-import avatar2 from "./assets/woman-avatar.png";
-import taskImg from "./assets/tasks-image.png";
+import logo from "../assets/logo.png";
+import avatar from "../assets/man-avatar.jpg";
+import avatar2 from "../assets/woman-avatar.png";
+import taskImg from "../assets/tasks-image.png";
+import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -33,8 +34,8 @@ function Header() {
                   isManOrWoman === "man"
                     ? avatar
                     : isManOrWoman === "woman"
-                    ? avatar2
-                    : avatar
+                      ? avatar2
+                      : avatar
                 }
                 alt=""
                 className="avatar-header"

@@ -1,0 +1,503 @@
+/* task header */
+
+.centerTaskName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.focusMode-task-container {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #1f1f1f, #252525);
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.flex-flexes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+.centerFlex {
+  width: 100%;
+}
+
+.flex-focus-1 {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 50vh;
+  width: 70%;
+}
+
+.inputs-showing {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.focusMode-input {
+  width: 100%;
+  max-width: 280px;
+}
+
+.flex-setTime-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.set-time-focusMode {
+  width: 100%;
+  max-width: 200px;
+}
+
+.focusMode-timer-span {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.focusMode-task-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.focusMode-task-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #bdbdbd;
+  line-height: 1.4;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/* layout */
+
+.flex-flexes {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-focus-1,
+.flex-focus-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-tips-and-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* pomodoro */
+
+.focusMode-pomodoro-timer {
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.focusMode-pomodoro-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 20px;
+}
+
+/* Visibility */
+
+.btns-showing,
+.inputs-showing {
+  display: flex;
+  gap: 15px;
+  transition: all 0.4s ease;
+}
+
+.btns-notShowing,
+.inputs-notShowing {
+  display: none;
+}
+
+.flex-setTime-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* buttons */
+
+.focusMode-pomodoro-btns button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.start-btn-focusMode {
+  background: linear-gradient(145deg, #1f3c6e, #3359a4);
+}
+
+.start-btn-focusMode:hover {
+  background: linear-gradient(145deg, #2a4b8c, #4a6bbd);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.pause-btn-focusMode {
+  background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
+}
+
+.pause-btn-focusMode:hover {
+  background: linear-gradient(145deg, #3a3a3a, #4a4a4a);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.reset-btn-focusMode {
+  background: linear-gradient(145deg, #5c1a1a, #842222);
+}
+
+.reset-btn-focusMode:hover {
+  background: linear-gradient(145deg, #6e2222, #a12b2b);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.break-btn-focusMode {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+}
+
+.break-btn-focusMode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+.focus-btn-focusMode {
+  background: linear-gradient(135deg, #6a5af9, #836fff);
+}
+
+.focus-btn-focusMode:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(106, 90, 249, 0.4);
+}
+
+.set-time-focusMode {
+  background: linear-gradient(145deg, #2a5c2a, #3a7a3a);
+}
+
+.set-time-focusMode:hover {
+  background: linear-gradient(145deg, #3a7a3a, #4a9a4a);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Timer */
+
+.focusMode-timer-span {
+  height: 100%;
+}
+
+.timer {
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2c2c2c;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Finish buttons */
+
+.finishTask-focusMode-section {
+  margin-top: 2vh;
+}
+.finishTask-focusMode-section button {
+  margin-top: 1rem;
+}
+
+.backHome-focusMode-btn {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.backHome-focusMode-btn:hover {
+  background: #374151;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.finishTask-focusMode-btn {
+  background: linear-gradient(135deg, #f87171, #fb923c);
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(251, 146, 60, 0.4);
+}
+
+.finishTask-focusMode-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Tips */
+
+.footerSection-focusMode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.focusMode-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 18px 24px;
+  border-radius: 18px;
+  max-width: 600px;
+  margin-left: 4vw;
+  color: #eaeaea;
+  font-size: 15.5px;
+  line-height: 1.6;
+  font-weight: 500;
+  box-shadow: 0 0 25px rgba(120, 90, 250, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.focusMode-input {
+  width: 200px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background: #1f1f1f;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.focusMode-input::placeholder {
+  color: #888;
+}
+
+.focusMode-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.inputs-showing {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1150px) {
+  .inputs-showing {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .flex-flexes {
+    padding: 20px;
+  }
+
+  .flex-focus-1 {
+    flex-direction: column;
+    gap: 24px;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .focusMode-pomodoro-btns {
+    align-items: center;
+  }
+
+  .focusMode-input {
+    width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .btns-showing {
+    flex-direction: column;
+    margin-top: 12rem;
+  }
+
+  .btns-showing button {
+    width: 30vw;
+    height: 5vh;
+  }
+
+  .flex-focus-1 {
+    height: 80vh;
+  }
+
+  .flex-tips-and-timer {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .centerTaskName {
+    margin-bottom: 16px;
+  }
+
+  .focusMode-task-container {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .focusMode-pomodoro-btns {
+    width: 100%;
+  }
+
+  .flex-focus-1 {
+    height: 92vh;
+  }
+
+  .inputs-showing {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .focusMode-input {
+    width: 100%;
+  }
+
+  .flex-setTime-btn {
+    width: 100%;
+  }
+
+  .set-time-focusMode {
+    width: 100%;
+  }
+
+  .flex-tips-and-timer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .focusMode-timer-span {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .flex-focus-1 {
+    height: 95vh;
+  }
+
+  .inputs-showing {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .flex-focus-1 {
+    height: 95vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .timer {
+    font-size: 28px;
+    margin-top: 1rem;
+  }
+
+  .focusMode-tips {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .flex-focus-1 {
+    height: 110vh;
+  }
+
+  .finishTask-focusMode-section {
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 1rem;
+  }
+
+  .finishTask-focusMode-section button {
+    margin-top: 1rem;
+  }
+
+  .backHome-focusMode-btn,
+  .finishTask-focusMode-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .flex-focus-1 {
+    height: 100vh;
+  }
+}

@@ -1,0 +1,189 @@
+.user-task {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #2e2e2e, #262626);
+  color: #ffffff;
+  padding: 3vh 2vw;
+  margin: 1vh 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.user-task-focusMode-activated {
+  display: none;
+}
+
+.user-task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(145deg, #353535, #292929);
+}
+
+.taskAndDesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-name {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin-right: 2vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.task-description {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  color: #bfbfbf;
+  line-height: 1.4;
+  max-width: 30vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+
+.task-buttons button {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.task-buttons .focus {
+  background: linear-gradient(135deg, #4caf50, #3e8e41);
+  color: #ffffff;
+}
+
+.task-buttons .focus:hover {
+  background: linear-gradient(135deg, #5dd36e, #47a148);
+  transform: scale(1.05);
+}
+
+.finish-button {
+  padding: 1vh 2vw;
+  background: linear-gradient(135deg, #6a5acd, #00bfff);
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.finish-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #7b68ee, #1e90ff);
+}
+
+.finish-button:active {
+  transform: scale(0.98);
+}
+
+.task-buttons .delete {
+  background: linear-gradient(135deg, #f44336, #c9302c);
+  color: #ffffff;
+}
+
+.task-buttons .delete:hover {
+  background: linear-gradient(135deg, #ff5c5c, #d43f3f);
+  transform: scale(1.05);
+}
+
+/* task title */
+.task-name {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+/* task description */
+.task-description {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+@media (max-width: 1500px) {
+  .task-name {
+    max-width: 200px;
+  }
+
+  /* task description */
+  .task-description {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .task-name {
+    max-width: 200px;
+  }
+
+  /* task description */
+  .task-description {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 950px) {
+  .task-name {
+    max-width: 100px;
+  }
+
+  /* task description */
+  .task-description {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 800px) {
+  .task-name {
+    max-width: 90px;
+  }
+
+  /* task description */
+  .task-description {
+    max-width: 70px;
+  }
+}
+
+@media (max-width: 700px) {
+  .user-task {
+    flex-direction: column;
+  }
+
+  .task-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .task-buttons {
+    flex-direction: column;
+  }
+
+  .task-buttons button {
+    width: 40vw;
+  }
+}

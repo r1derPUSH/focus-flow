@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import DigitalClock from "./DigitalClock";
+import { useEffect, useState } from "react";
+import DigitalClock from "../DigitalClock/DigitalClock";
+import "./Greeting.css";
 
 const Greeting = ({ name, surname }) => {
   const [time, setTime] = useState(new Date());
@@ -10,10 +11,10 @@ const Greeting = ({ name, surname }) => {
     return hour >= 6 && hour <= 12
       ? "Morning"
       : hour >= 12 && hour <= 18
-      ? "Afternoon"
-      : hour >= 18 && hour <= 24
-      ? "Evening"
-      : "Night";
+        ? "Afternoon"
+        : hour >= 18 && hour <= 24
+          ? "Evening"
+          : "Night";
   });
 
   useEffect(() => {
