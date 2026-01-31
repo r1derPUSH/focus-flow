@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./UserTask.css";
 
 function UserTask({
   task,
@@ -12,22 +13,19 @@ function UserTask({
   isFocusMode,
   setCurrentTask,
 }) {
-  // if (tasks.length == 0) {
-  //   //
-  // }
   const [finishedTasks, setFinishedTasks] = useState([]);
   const handleRemove = () => {
     setTasks(tasks.filter((item) => item !== task));
     localStorage.setItem(
       "task-name",
-      JSON.stringify(tasks.filter((item) => item !== task))
+      JSON.stringify(tasks.filter((item) => item !== task)),
     );
     setDescs(descs.filter((item) => item !== localStorage.getItem(task)));
     localStorage.setItem(
       "task-description",
       JSON.stringify(
-        descs.filter((item) => item !== localStorage.getItem(task))
-      )
+        descs.filter((item) => item !== localStorage.getItem(task)),
+      ),
     );
   };
 
@@ -64,11 +62,13 @@ function UserTask({
     localStorage.setItem("completed-tasks", completedTasks);
     localStorage.setItem(
       "task-name",
-      JSON.stringify(tasks.filter((item) => item !== task))
+      JSON.stringify(tasks.filter((item) => item !== task)),
     );
     localStorage.setItem(
       "task-description",
-      JSON.stringify(descs.filter((item) => item != localStorage.getItem(task)))
+      JSON.stringify(
+        descs.filter((item) => item != localStorage.getItem(task)),
+      ),
     );
   };
 

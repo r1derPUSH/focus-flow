@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./FocusMode.css";
 
 function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
   const [workTime, setWorkTime] = useState("");
@@ -84,7 +85,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     setIsFocusMode(false);
     localStorage.setItem(
       "task-name",
-      JSON.stringify(tasks.filter((item) => item != currentTask))
+      JSON.stringify(tasks.filter((item) => item != currentTask)),
     );
     setTasks(tasks.filter((item) => item != currentTask));
   };
@@ -181,6 +182,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                     onChange={handleWorkTimeChange}
                     type="number"
                     placeholder="Work Time in Minutes"
+                    className="focusMode-input"
                   />
                   <input
                     min={0}
@@ -189,6 +191,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                     onChange={handleBreakTimeChange}
                     type="number"
                     placeholder="Break Time in Minutes"
+                    className="focusMode-input"
                   />
                   <div className="flex-setTime-btn">
                     <button

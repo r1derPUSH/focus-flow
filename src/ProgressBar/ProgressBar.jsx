@@ -1,4 +1,5 @@
-import FocusMode from "./FocusMode";
+import FocusMode from "../FocusMode/FocusMode";
+import "./ProgressBar.css";
 
 function ProgressBar({
   isFocusMode,

@@ -1,0 +1,96 @@
+/* Wrapper */
+
+.tasks-flex-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks-flex-div-focusMode-activated {
+  display: none;
+}
+
+/* Header row */
+
+.tasks-div {
+  margin-top: 3vh;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.span-daily-tasks-text {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  margin-left: 0.5rem;
+}
+
+/* User description wrapper */
+
+.task-user-description {
+  margin-left: 3.5vw;
+  width: 70%;
+  height: 10vh;
+  border-radius: 25px;
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+/* Add task button */
+
+.add-task-btn-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task-btn {
+  height: 6vh;
+  padding: 1vh 2vh;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4cafef, #0077ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-left: 2vw;
+  margin-top: 1rem;
+}
+
+.add-task-btn:hover {
+  background: linear-gradient(135deg, #5ec6ff, #3399ff);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Tasks list */
+
+.tasks-container {
+  width: 75%;
+  margin: 3vh auto;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 1100px) {
+  .tasks-div {
+    flex-direction: column;
+  }
+
+  .task-user-description {
+    margin: 1.5rem;
+    height: auto;
+  }
+}

@@ -1,0 +1,55 @@
+/* Header wrapper */
+
+.header-tag {
+  background-color: #121212;
+}
+
+/* Main header layout */
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Logo */
+
+.flex-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logotype,
+.avatar-header {
+  width: clamp(8vw, 12vw, 14vw);
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  font-weight: 600;
+  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
+/* Right side */
+
+.flex-header-images-rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-img {
+  margin-right: 3vw;
+  width: clamp(8vw, 12vw, 14vw);
+  height: auto;
+  cursor: pointer;
+}
+
+.avatar-header {
+  border: 3px solid white;
+}
