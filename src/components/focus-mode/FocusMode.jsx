@@ -20,16 +20,10 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     setBreakTime(e.target.value);
   };
 
-  const handleBreak = () => {
+  const handleModeSwitch = (mode, time) => {
     handleStart();
-    setTimeLeft(breakTime * 60);
-    setMode("Break :");
-  };
-
-  const handleFocus = () => {
-    handleStart();
-    setTimeLeft(workTime * 60);
-    setMode("Focus :");
+    setTimeLeft(time * 60);
+    setMode(mode);
   };
 
   const handleStart = () => {
@@ -124,7 +118,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
 
   return (
     <>
-      <div className="centerTaskName">
+      <div className="center-task-name">
         <div className="focusMode-task-container">
           <span className="focusMode-task-name">{currentTask}</span>
           <span className="focusMode-task-description">
@@ -133,7 +127,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
         </div>
       </div>
       <div className="flex-flexes">
-        <div className="centerFlex">
+        <div className="center-flex">
           <div className="flex-focus-1">
             <div className="focusMode-pomodoro-timer">
               <div className="focusMode-pomodoro-btns">
@@ -161,10 +155,16 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                   >
                     Reset
                   </button>
-                  <button onClick={handleBreak} className="break-btn-focusMode">
+                  <button
+                    onClick={() => handleModeSwitch("Break :", breakTime)}
+                    className="break-btn-focusMode"
+                  >
                     Break
                   </button>
-                  <button onClick={handleFocus} className="focus-btn-focusMode">
+                  <button
+                    onClick={() => handleModeSwitch("Focus :", workTime)}
+                    className="focus-btn-focusMode"
+                  >
                     Focus
                   </button>
                 </div>

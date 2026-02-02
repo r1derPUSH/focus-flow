@@ -1,6 +1,6 @@
 /* task header */
 
-.centerTaskName {
+.center-task-name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +20,7 @@
   text-align: center;
 }
 
-.flex-flexes {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 16px;
-}
-
-.centerFlex {
+.center-flex {
   width: 100%;
 }
 
@@ -102,9 +95,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 40px 16px;
 }
 
-.centerFlex {
+.center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,7 +397,7 @@
 }
 
 @media (max-width: 768px) {
-  .centerTaskName {
+  .center-task-name {
     margin-bottom: 16px;
   }
 

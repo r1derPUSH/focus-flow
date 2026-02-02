@@ -76,7 +76,7 @@ function UserTask({
     <div
       className={!isFocusMode ? "user-task" : "user-task-focusMode-activated"}
     >
-      <div className="taskAndDesc">
+      <div className="task-and-desc">
         <span className="task-name">{task}</span>
         <span className="task-description">{localStorage.getItem(task)}</span>
       </div>

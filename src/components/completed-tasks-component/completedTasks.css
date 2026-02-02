@@ -1,4 +1,4 @@
-.centerTasks {
+.center-tasks {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,9 @@
   margin: 8px 0;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   width: 70rem;
 }
 
@@ -66,7 +68,10 @@ button {
   border-radius: 12px;
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .finished-page {
@@ -102,25 +107,28 @@ button {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.clearTaskBtn {
+.clear-task-btn {
   font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 
   color: #fff;
   background: linear-gradient(135deg, #4b4e6d, #6c71a0);
 }
 
-.clearTaskBtn:hover {
+.clear-task-btn:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #6c71a0, #4b4e6d);
 }
 
-.clearTaskBtn:active {
+.clear-task-btn:active {
   transform: translateY(1px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

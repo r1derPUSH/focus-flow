@@ -1,17 +1,15 @@
 import { useState } from "react";
-import UserDescriptionOfTask from "../UserDescriptionOfTask/UserDescriptionOfTask";
-import UserTask from "../UserTask/UserTask";
+import UserDescriptionOfTask from "../user-description-of-task/UserDescriptionOfTask";
+import UserTask from "../user-task/UserTask";
 import "./DailyTasks.css";
 
 function DailyTasks({
   setTotalTasks,
   setCompletedTasks,
   completedTasks,
-  totalTasks,
   setIsFocusMode,
   isFocusMode,
   setCurrentTask,
-  setCurrentDescription,
   currentTask,
   tasks,
   setTasks,
@@ -19,7 +17,6 @@ function DailyTasks({
   const localStorageDescsArr = JSON.parse(
     localStorage.getItem("task-descripton"),
   );
-  const [inputValue, setInputValue] = useState("");
   const [descs, setDescs] = useState(() => {
     const arr = localStorageDescsArr ? localStorageDescsArr : [];
     return arr;
@@ -50,12 +47,10 @@ function DailyTasks({
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
               <UserDescriptionOfTask
-                completedTasks={completedTasks}
                 setTasks={setTasks}
                 tasks={tasks}
                 setDescs={setDescs}
                 descs={descs}
-                setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}
               />
@@ -74,7 +69,6 @@ function DailyTasks({
             {tasks.map((item, idx) => {
               return (
                 <UserTask
-                  setCurrentDescription={setCurrentDescription}
                   setCurrentTask={setCurrentTask}
                   isFocusMode={isFocusMode}
                   setIsFocusMode={setIsFocusMode}
