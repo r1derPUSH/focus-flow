@@ -9,12 +9,10 @@ function MainSection({ name, surname }) {
     const arr = localStorageTasksArr ? localStorageTasksArr : [];
     return arr;
   });
-  const [tasksFinish, setTasksFinish] = useState();
   const [totalTasks, setTotalTasks] = useState(0);
   const [completedTasks, setCompletedTasks] = useState(0);
   const [isFocusMode, setIsFocusMode] = useState(false);
   const [currentTask, setCurrentTask] = useState("");
-  const [currentDescription, setCurrentDescription] = useState("");
   return (
     <>
       <Greeting name={name} surname={surname} />
@@ -29,7 +27,6 @@ function MainSection({ name, surname }) {
       />
       <DailyTasks
         currentTask={currentTask}
-        setCurrentDescription={setCurrentDescription}
         setCurrentTask={setCurrentTask}
         isFocusMode={isFocusMode}
         setIsFocusMode={setIsFocusMode}

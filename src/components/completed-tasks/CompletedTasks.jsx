@@ -15,7 +15,7 @@ function CompletedTasks({ tasks, isHandleEffect, setIsHandleEffect }) {
     setIsHandleEffect(!isHandleEffect);
   }, []);
 
-  const clearData = () => {
+  const handleClearData = () => {
     localStorage.removeItem("finished-tasks");
     localStorage.removeItem("finished-descs");
     setIsHandleEffect(!isHandleEffect);
@@ -43,7 +43,7 @@ function CompletedTasks({ tasks, isHandleEffect, setIsHandleEffect }) {
         <button className="finished-page" onClick={handleRouterBack}>
           Back to home
         </button>
-        <button onClick={clearData} className="clearDataBase">
+        <button onClick={handleClearData} className="clearDataBase">
           Clear Data
         </button>
       </div>

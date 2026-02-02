@@ -1,4 +1,4 @@
-import "./completedTasks.css";
+import "./CompletedTasks.css";
 
 function CompletedTaskComponent({
   task,
@@ -6,7 +6,7 @@ function CompletedTaskComponent({
   isHandleEffect,
   setIsHandleEffect,
 }) {
-  const clearTaskBtn = () => {
+  const handleClearTask = () => {
     // arr 1
     let arr1 = JSON.parse(localStorage.getItem("finished-tasks"));
     arr1 = arr1.filter((i) => i != task);
@@ -22,7 +22,7 @@ function CompletedTaskComponent({
     <div className="center-tasks">
       <div className="finished-task">
         <span>{task}</span> <span>{desc}</span>
-        <button onClick={clearTaskBtn} className="clear-task-btn">
+        <button onClick={handleClearTask} className="clear-task-btn">
           Clear Task
         </button>
       </div>

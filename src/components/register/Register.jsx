@@ -24,7 +24,6 @@ const Register = ({ setIsRegistered }) => {
   if (img == avatar) {
     kindOfAvatar = "man";
   } else if (img == avatar2) {
-    console.log("woman worked out");
     kindOfAvatar = "woman";
   }
 
@@ -49,7 +48,7 @@ const Register = ({ setIsRegistered }) => {
   async function handleStart() {
     localStorage.setItem("isRegistered", true);
     if (!nameValue.trim()) {
-      alert("bad :(");
+      alert("wrong input :(");
       return;
     }
     localStorage.setItem("name", nameValue);
@@ -58,7 +57,6 @@ const Register = ({ setIsRegistered }) => {
     setStyles(true);
     await wait(1500);
     setIsStarted(true);
-    // setIsRegistered(true);
   }
 
   async function handleSkip() {
@@ -71,71 +69,69 @@ const Register = ({ setIsRegistered }) => {
     setIsStarted(true);
   }
 
-  if (!isStarted) {
-    return (
-      <section
-        className={!styles ? "login-section" : "login-section-activated"}
-      >
-        <div className="flexBox">
-          <div className="login-text">
-            <h1>Fill your profile</h1>
-            <span className="span-login-text">
-              Don't worry, you can always change it later, or you can skip it
-              for now
-            </span>
-          </div>
-          <div className="avatar">
-            <div className="flex-img">
-              <img className="avatar-login" src={img} alt="" />
-              <img
-                onClick={handleImgChange}
-                className="avatar-change-logo"
-                src={changeIcon}
-                alt=""
-              />
-            </div>
-            <div className="change-image-handler"></div>
-          </div>
-          <div className="login-input-fields">
-            <div className="name">
-              <input
-                className="name-input-login"
-                placeholder="Name"
-                type="text"
-                id="name"
-                name="name"
-                value={nameValue}
-                onChange={handleChangeName}
-                required
-              ></input>
-            </div>
-            <div className="surname-label">
-              <input
-                className="surname-input-login"
-                placeholder="Surname"
-                type="text"
-                id="surname"
-                name="surname"
-                value={surnameValue}
-                onChange={handleChangeSurname}
-                required
-              ></input>
-            </div>
-          </div>
-          <div className="start-buttons">
-            <button onClick={handleSkip} className="skip-btn">
-              Skip
-            </button>
-            <button onClick={handleStart} className="start-btn">
-              Start
-            </button>
-          </div>
-        </div>
-      </section>
-    );
-  } else if (isStarted) {
+  if (isStarted) {
     return <MainContent name={nameValue} surname={surnameValue} />;
   }
+
+  return (
+    <section className={!styles ? "login-section" : "login-section-activated"}>
+      <div className="flexBox">
+        <div className="login-text">
+          <h1>Fill your profile</h1>
+          <span className="span-login-text">
+            Don't worry, you can always change it later, or you can skip it for
+            now
+          </span>
+        </div>
+        <div className="avatar">
+          <div className="flex-img">
+            <img className="avatar-login" src={img} alt="" />
+            <img
+              onClick={handleImgChange}
+              className="avatar-change-logo"
+              src={changeIcon}
+              alt=""
+            />
+          </div>
+          <div className="change-image-handler"></div>
+        </div>
+        <div className="login-input-fields">
+          <div className="name">
+            <input
+              className="name-input-login"
+              placeholder="Name"
+              type="text"
+              id="name"
+              name="name"
+              value={nameValue}
+              onChange={handleChangeName}
+              required
+            ></input>
+          </div>
+          <div className="surname-label">
+            <input
+              className="surname-input-login"
+              placeholder="Surname"
+              type="text"
+              id="surname"
+              name="surname"
+              value={surnameValue}
+              onChange={handleChangeSurname}
+              required
+            ></input>
+          </div>
+        </div>
+        <div className="start-buttons">
+          <button onClick={handleSkip} className="skip-btn">
+            Skip
+          </button>
+          <button onClick={handleStart} className="start-btn">
+            Start
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Register;

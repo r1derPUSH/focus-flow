@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import DigitalClock from "../digital-clock/DigitalClock";
+import { getTime } from "../../utils/utils";
 import "./Greeting.css";
 
-const Greeting = ({ name, surname }) => {
+const Greeting = () => {
   const [time, setTime] = useState(new Date());
-  const hour = getTime();
+  const hour = getTime(time);
   const userName = localStorage.getItem("name");
-  const userSurname = localStorage.getItem("surname");
   const [timeOfDay, setTimeOfDay] = useState(() => {
     return hour >= 6 && hour <= 12
       ? "Morning"
@@ -28,11 +28,6 @@ const Greeting = ({ name, surname }) => {
       clearInterval(intervalId);
     };
   }, []);
-
-  function getTime() {
-    const hours = time.getHours();
-    return hours;
-  }
 
   return (
     <div className="flex-bar">

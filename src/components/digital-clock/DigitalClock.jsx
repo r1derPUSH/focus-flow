@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./DigitalClock.css";
+import { formatTime } from "../../utils/utils";
 
 function DigitalClock() {
   const [time, setTime] = useState(new Date());
@@ -14,21 +15,9 @@ function DigitalClock() {
     };
   }, []);
 
-  function formatTime() {
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
-
-    return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
-  }
-
-  function padZero(number) {
-    return (number < 10 ? "0" : "") + number;
-  }
-
   return (
     <>
-      <span className="clock">{formatTime()}</span>
+      <span className="clock">{formatTime(time)}</span>
     </>
   );
 }

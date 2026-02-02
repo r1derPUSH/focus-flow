@@ -20,16 +20,10 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
     setBreakTime(e.target.value);
   };
 
-  const handleBreak = () => {
+  const handleModeSwitch = (mode, time) => {
     handleStart();
-    setTimeLeft(breakTime * 60);
-    setMode("Break :");
-  };
-
-  const handleFocus = () => {
-    handleStart();
-    setTimeLeft(workTime * 60);
-    setMode("Focus :");
+    setTimeLeft(time * 60);
+    setMode(mode);
   };
 
   const handleStart = () => {
@@ -161,10 +155,16 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
                   >
                     Reset
                   </button>
-                  <button onClick={handleBreak} className="break-btn-focusMode">
+                  <button
+                    onClick={() => handleModeSwitch("Break :", breakTime)}
+                    className="break-btn-focusMode"
+                  >
                     Break
                   </button>
-                  <button onClick={handleFocus} className="focus-btn-focusMode">
+                  <button
+                    onClick={() => handleModeSwitch("Focus :", workTime)}
+                    className="focus-btn-focusMode"
+                  >
                     Focus
                   </button>
                 </div>

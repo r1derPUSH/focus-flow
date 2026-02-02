@@ -3,6 +3,7 @@ import CompletedTasks from "./components/completed-tasks/CompletedTasks";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MainContent from "./components/MainContent";
+import { routes } from "./constants/routes/routes";
 
 function App() {
   const [isHandleEffect, setIsHandleEffect] = useState(false);
@@ -25,12 +26,12 @@ function App() {
     <HashRouter>
       <Routes>
         {isRegisteredLC == "false" ? (
-          <Route path="/" element={<Register />}></Route>
+          <Route path={routes.home} element={<Register />}></Route>
         ) : (
-          <Route path="/" element={<MainContent />}></Route>
+          <Route path={routes.home} element={<MainContent />}></Route>
         )}
         <Route
-          path="/completed"
+          path={routes.completed}
           element={
             <CompletedTasks
               setIsHandleEffect={setIsHandleEffect}

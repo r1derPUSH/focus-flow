@@ -10,7 +10,6 @@ function DailyTasks({
   setIsFocusMode,
   isFocusMode,
   setCurrentTask,
-  setCurrentDescription,
   currentTask,
   tasks,
   setTasks,
@@ -48,12 +47,10 @@ function DailyTasks({
           {isUserDescriptionVisible ? (
             <div className="task-user-description">
               <UserDescriptionOfTask
-                completedTasks={completedTasks}
                 setTasks={setTasks}
                 tasks={tasks}
                 setDescs={setDescs}
                 descs={descs}
-                setInputValue={setInputValue}
                 isVisible={isUserDescriptionVisible}
                 setIsVisible={setIsUserDescriptionVisible}
               />
@@ -72,7 +69,6 @@ function DailyTasks({
             {tasks.map((item, idx) => {
               return (
                 <UserTask
-                  setCurrentDescription={setCurrentDescription}
                   setCurrentTask={setCurrentTask}
                   isFocusMode={isFocusMode}
                   setIsFocusMode={setIsFocusMode}
