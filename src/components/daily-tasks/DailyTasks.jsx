@@ -1,13 +1,12 @@
 import { useState } from "react";
-import UserDescriptionOfTask from "../UserDescriptionOfTask/UserDescriptionOfTask";
-import UserTask from "../UserTask/UserTask";
+import UserDescriptionOfTask from "../user-description-of-task/UserDescriptionOfTask";
+import UserTask from "../user-task/UserTask";
 import "./DailyTasks.css";
 
 function DailyTasks({
   setTotalTasks,
   setCompletedTasks,
   completedTasks,
-  totalTasks,
   setIsFocusMode,
   isFocusMode,
   setCurrentTask,
@@ -19,7 +18,6 @@ function DailyTasks({
   const localStorageDescsArr = JSON.parse(
     localStorage.getItem("task-descripton"),
   );
-  const [inputValue, setInputValue] = useState("");
   const [descs, setDescs] = useState(() => {
     const arr = localStorageDescsArr ? localStorageDescsArr : [];
     return arr;

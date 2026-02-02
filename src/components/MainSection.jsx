@@ -1,6 +1,6 @@
-import DailyTasks from "./DailyTasks/DailyTasks";
+import DailyTasks from "./daily-tasks/DailyTasks";
 import Greeting from "./Greeting/Greeting";
-import ProgressBar from "./ProgressBar/ProgressBar";
+import ProgressBar from "./progress-bar/ProgressBar";
 import { useState } from "react";
 
 function MainSection({ name, surname }) {

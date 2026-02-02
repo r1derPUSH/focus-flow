@@ -124,7 +124,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
 
   return (
     <>
-      <div className="centerTaskName">
+      <div className="center-task-name">
         <div className="focusMode-task-container">
           <span className="focusMode-task-name">{currentTask}</span>
           <span className="focusMode-task-description">
@@ -133,7 +133,7 @@ function FocusMode({ currentTask, setIsFocusMode, tasks, setTasks }) {
         </div>
       </div>
       <div className="flex-flexes">
-        <div className="centerFlex">
+        <div className="center-flex">
           <div className="flex-focus-1">
             <div className="focusMode-pomodoro-timer">
               <div className="focusMode-pomodoro-btns">

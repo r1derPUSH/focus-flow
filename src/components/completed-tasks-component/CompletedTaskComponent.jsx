@@ -19,10 +19,10 @@ function CompletedTaskComponent({
   };
 
   return (
-    <div className="centerTasks">
+    <div className="center-tasks">
       <div className="finished-task">
         <span>{task}</span> <span>{desc}</span>
-        <button onClick={clearTaskBtn} className="clearTaskBtn">
+        <button onClick={clearTaskBtn} className="clear-task-btn">
           Clear Task
         </button>
       </div>

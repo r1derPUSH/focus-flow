@@ -24,7 +24,7 @@
   background: linear-gradient(145deg, #353535, #292929);
 }
 
-.taskAndDesc {
+.task-and-desc {
   display: flex;
   justify-content: center;
   align-items: center;

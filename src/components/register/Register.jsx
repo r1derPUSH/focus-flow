@@ -1,6 +1,6 @@
-import avatar from "../assets/man-avatar.jpg";
-import changeIcon from "../assets/icons8-change-50.png";
-import avatar2 from "../assets/woman-avatar.png";
+import avatar from "../../assets/man-avatar.jpg";
+import changeIcon from "../../assets/icons8-change-50.png";
+import avatar2 from "../../assets/woman-avatar.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import MainContent from "../MainContent";

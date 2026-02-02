@@ -1,9 +1,9 @@
-import logo from "../assets/logo.png";
-import avatar from "../assets/man-avatar.jpg";
-import avatar2 from "../assets/woman-avatar.png";
-import taskImg from "../assets/tasks-image.png";
-import "./Header.css";
+import logo from "../../assets/logo.png";
+import avatar from "../../assets/man-avatar.jpg";
+import avatar2 from "../../assets/woman-avatar.png";
+import taskImg from "../../assets/tasks-image.png";
 import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
 function Header() {
   const navigate = useNavigate();

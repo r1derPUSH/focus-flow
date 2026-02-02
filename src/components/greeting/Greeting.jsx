@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DigitalClock from "../DigitalClock/DigitalClock";
+import DigitalClock from "../digital-clock/DigitalClock";
 import "./Greeting.css";
 
 const Greeting = ({ name, surname }) => {

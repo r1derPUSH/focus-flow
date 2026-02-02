@@ -1,6 +1,6 @@
 /* task header */
 
-.centerTaskName {
+.center-task-name {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
   padding: 40px 16px;
 }
 
-.centerFlex {
+.center-flex {
   width: 100%;
 }
 
@@ -104,7 +104,7 @@
   align-items: center;
 }
 
-.centerFlex {
+.center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,7 +403,7 @@
 }
 
 @media (max-width: 768px) {
-  .centerTaskName {
+  .center-task-name {
     margin-bottom: 16px;
   }
 

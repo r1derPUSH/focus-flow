@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import CompletedTaskComponent from "../CompletedTasksComponent/CompletedTaskComponent";
+import CompletedTaskComponent from "../completed-tasks-component/CompletedTaskComponent";
 
 import "./CompletedTasks.css";
 

@@ -1,8 +1,8 @@
-import Register from "./Register/Register";
-import CompletedTasks from "./CompletedTasks/CompletedTasks";
+import Register from "./components/Register/Register";
+import CompletedTasks from "./components/completed-tasks/CompletedTasks";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import MainContent from "./MainContent";
+import MainContent from "./components/MainContent";
 
 function App() {
   const [isHandleEffect, setIsHandleEffect] = useState(false);
