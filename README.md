@@ -8,11 +8,11 @@
 
 **Below are some screenshots of Focus Flow in action 🚀**
 
-![alt text](image.png)
+![alt text](example-of-project1.png)
 
-![alt text](image-2.png)
+![alt text](example-of-project2.png)
 
-![alt text](image-1.png)
+![alt text](example-of-project3.png)
 
 **Focus Flow** is a productivity web application that helps users organize tasks, track progress, and stay focused using a Focus Mode inspired by the Pomodoro technique ⏱️.
 
@@ -105,7 +105,7 @@
    ```
 5. Open http://localhost:3000 in your browser 🌐.
 
-## Usage 🎯 ##
+## Usage 🎯
 
 - **Open the app and register by filling in your name, surname, and choosing an avatar (or skip registration 😉)**
 
